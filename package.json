@@ -1,0 +1,26 @@
+{
+  "name": "fadeitdk-blog",
+  "version": "0.0.1",
+  "description": "fadeit.dk/blog",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fadeit/fadeitdk-blog.git"
+  },
+  "keywords": [
+    "fadeit",
+    "blog"
+  ],
+  "author": "Dan Mindru <mindrudan@gmail.com> (http://mindrudan.com/)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/fadeit/fadeitdk-blog/issues"
+  },
+  "homepage": "https://github.com/fadeit/fadeitdk-blog#readme",
+  "dependencies": {
+    "material-design-lite": "^1.1.3"
+  }
+}

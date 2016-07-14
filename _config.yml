@@ -19,3 +19,6 @@ github_username:  fadeit
 
 # Build settings
 markdown: kramdown
+exclude:
+  - "node_modules"
+  - "package.json"
