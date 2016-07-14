@@ -22,3 +22,34 @@ markdown: kramdown
 exclude:
   - "node_modules"
   - "package.json"
+
+# Post defaults
+defaults:
+  -
+    scope:
+      path: "" # an empty string here means all files in the project
+    values:
+      layout: "default"
+      size: 12
+      sizeDesktop: 12
+      textColor: "grey-50"
+      metaColor: "grey-600"
+
+
+authors:
+  dan:
+    display_name: "Dan Mindru"
+    title: "Front-end developer"
+    gravatar: "37131e747ce8855b4015024d64668e7d"
+    email: "dm@fadeit.dk"
+    web: "http://mindrudan.com/"
+    twitter: "d4m1n"
+    github: "danmindru"
+  justas:
+    display_name: "Justas Azna"
+    title: "Software engineer"
+    gravatar: "3b506312d288ba78253aef2222fcfb78"
+    email: "ja@fadeit.dk"
+    web: "http://reederz.com/"
+    twitter: "reederz"
+    github: "reederz"
