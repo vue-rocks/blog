@@ -53,3 +53,8 @@ authors:
     web: "http://reederz.com/"
     twitter: "reederz"
     github: "reederz"
+  sander:
+    display_name: "Sander Sink"
+    title: "Software engineer"
+    email: "ss@fadeit.dk"
+    github: "ozooner"
