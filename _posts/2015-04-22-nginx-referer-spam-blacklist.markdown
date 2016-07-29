@@ -148,7 +148,7 @@ What's your experience with Referer Spam? Don't hesitate to use the comment sect
 - [Ultimate referer blacklist][blacklist-2]
 
 [awwwards]: http://www.awwwards.com/best-websites/fadeit-1/
-[ga-dashboard]: {{ site.url }}/posts/nginx-referer-spam-blacklist/ga_dashboard.png
+[ga-dashboard]: {{ site.baseurl }}/assets/nginx-referer-spam-blacklist/ga_dashboard.png
 [wiki]: http://en.wikipedia.org/wiki/Referer_spam
 [rfc]: http://tools.ietf.org/html/rfc1945
 [apache-block]: https://www.addedbytes.com/blog/block-referrer-spam/
