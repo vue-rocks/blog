@@ -3,6 +3,7 @@
 Install:
 ```bash
 gem install jekyll
+npm install
 ```
 
 Run dev server at http://localhost:4000/blog:
