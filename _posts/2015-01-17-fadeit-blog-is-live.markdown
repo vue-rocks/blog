@@ -8,6 +8,7 @@ size: 12
 sizeDesktop: 4
 textColor: grey-50
 metaColor: grey-600
+comments: true
 author: dan
 ---
 
