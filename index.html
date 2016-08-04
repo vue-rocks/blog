@@ -21,9 +21,9 @@ layout: default
   <p class="rss-subscribe">subscribe <a href="{{ "/feed.xml" | prepend: site.baseurl }}">via RSS</a></p>
  -->
 
-  <div class="demo-blog mdl-layout mdl-js-layout has-drawer is-upgraded">
+  <div class="blog mdl-layout mdl-js-layout has-drawer is-upgraded">
     <main class="mdl-layout__content">
-      <div class="demo-blog__posts mdl-grid">
+      <div class="blog__posts mdl-grid">
         {% for post in site.posts %}
         <div class="mdl-card coffee-pic mdl-cell mdl-cell--{{post.size}}-col mdl-cell mdl-cell--{{post.sizeDesktop}}-col-desktop">
           <a href="{{ post.url | prepend: site.baseurl }}" class="mdl-card__media mdl-color-text--{{post.textColor}}">
