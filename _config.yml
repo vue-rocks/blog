@@ -56,5 +56,6 @@ authors:
   sander:
     display_name: "Sander Sink"
     title: "Software engineer"
+    gravatar: "3b506312d288ba78253aef2222fcfb78" # Actually Justas' gravatar
     email: "ss@fadeit.dk"
     github: "ozooner"
