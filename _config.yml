@@ -23,6 +23,13 @@ exclude:
   - "node_modules"
   - "package.json"
 
+gems:
+  - jekyll-paginate
+
+# Pagination
+paginate: 10
+paginate_path: "/:num/"
+
 # Post defaults
 defaults:
   -

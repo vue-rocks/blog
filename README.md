@@ -2,7 +2,8 @@
 
 Install:
 ```bash
-gem install jekyll
+gem install jekyll bundler
+bundle install
 npm install
 ```
 
