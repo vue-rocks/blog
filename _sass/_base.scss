@@ -218,6 +218,16 @@ body{
       margin-left:auto;
       position:relative;
       z-index: 2;
+
+      &__link{
+        &--rss{
+          .material-icons{
+            color: $g1;
+            position:relative;
+            top:-2px;
+          }
+        }
+      }
     }
   }
 

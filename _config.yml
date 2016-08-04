@@ -16,17 +16,16 @@ baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "https://fadeit.dk" # the base hostname & protocol for your site
 twitter_username: fadeitdk
 github_username:  fadeit
-
-# Build settings
+permalink: pretty
 markdown: kramdown
-exclude:
-  - "node_modules"
-  - "package.json"
 
 gems:
   - jekyll-paginate
 
-# Pagination
+exclude:
+  - "node_modules"
+  - "package.json"
+
 paginate: 10
 paginate_path: "/:num/"
 
