@@ -1,0 +1,28 @@
+//Colors
+$w: white;
+$b: black;
+$g1: #1A1B1B;
+$g2: #434343;
+$g3: #575858;
+$g4: #686969;
+$g5: #868787;
+$g6: #B7B8BB;
+$g7: #DADADB;
+$g8: #ECEDEE;
+$g9: #F6F6F6;
+$red: red;
+$ws: #f3f3f3;
+
+//Sizes of things
+$gs: 16px;
+
+//MDL Colors
+$fdt: #0fade1;
+$fdt-dark: darken($fdt, 10%);
+
+$color-primary: $fdt;
+$color-primary-dark: red($fdt-dark), green($fdt-dark), blue($fdt-dark);
+$color-accent: red($fdt), green($fdt), blue($fdt);
+$color-primary-contrast: $w;
+$color-accent-contrast: $w;
+

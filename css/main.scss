@@ -6,6 +6,7 @@
 
 // Import partials from `sass_dir` (defaults to `_sass`)
 @import
-  "base",
+  "variables",
   "syntax-highlighting",
-  "../node_modules/material-design-lite/src/material-design-lite.scss";
+  "../node_modules/material-design-lite/src/material-design-lite.scss",
+  "base";

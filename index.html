@@ -30,7 +30,7 @@ layout: default
             <h3>{{post.title}}</h3>
           </a>
           <div class="mdl-card__supporting-text meta mdl-color-text--{{post.metaColor}}">
-            <div class="minilogo"></div>
+            <div class="minilogo" style="background-image: url(https://s.gravatar.com/avatar/{{site.authors[post.author].gravatar}});"></div>
             <div>
               <strong>{{ site.authors[post.author].display_name }}</strong>
               <span>{{ post.date | date: "%b %-d, %Y" }}</span>
