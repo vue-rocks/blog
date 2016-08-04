@@ -21,7 +21,7 @@ body{
   font-family: 'Roboto', 'Helvetica', sans-serif;
 
   &__posts {
-    max-width: 900px;
+    max-width: $max-col-sm;
     padding: 0;
     display: flex;
     width: 100%;
@@ -42,19 +42,21 @@ body{
     flex-direction: column;
     align-items: stretch;
     min-height: 360px;
+    transition: box-shadow $time $ease;
+    color: inherit;
+    text-decoration: none;
+    font-weight: inherit;
 
-    & > a {
-      color: inherit;
-      text-decoration: none;
-      font-weight: inherit;
+    &:hover, &:focus{
+      outline: 0;
+      transition: box-shadow $time $ease;
+      box-shadow: 0 4px 5px 0 rgba(0, 0, 0, 0.14), 0 1px 10px 0 rgba(0, 0, 0, 0.12), 0 2px 4px -1px rgba(0, 0, 0, 0.2);
     }
+
 
     h3 {
       margin: 0;
-
-      a {
-        text-decoration: none;
-      }
+      font-weight: 300;
     }
 
     &__title {
@@ -155,17 +157,42 @@ body{
     border-radius: 50%;
     background-color: #F5F5F5;
   }
+
+  .author{
+    color: $g1;
+  }
+
+  .date{
+    font-size: 0.9em;
+    color: $g5;
+  }
 }
 
 /*
  * 3. Fadeit styles
  */
 .fdt{
+  &__return{
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 100%;
+    padding: $gs*2 $gs;
+
+    a{
+      text-decoration: none;
+    }
+
+    .mdl-button{
+      margin-right:$gs/2;
+    }
+  }
+
   &__header{
-    max-width: 900px;
+    max-width: $max-col-sm;
     width: 100%;
     margin: 0 auto;
-    padding: $gs*3 0;
+    padding: $gs 0;
   }
 
   &__header-row{
@@ -194,16 +221,8 @@ body{
     }
   }
 
-  &__return{
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    padding: $gs;
-
-    a{
-      text-decoration: none;
-    }
+  &__footer{
+    margin-top: $gs*2;
   }
 }
 
