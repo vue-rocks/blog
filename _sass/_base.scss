@@ -233,6 +233,7 @@ body{
 
   &__footer{
     margin-top: auto;
+    padding-top: $gs*2;
 
     .mdl-mega-footer__link-list{
       width:100%;
@@ -241,6 +242,32 @@ body{
 
     &__made{
       margin-left:auto;
+    }
+  }
+
+  &__post{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+
+    img{
+      max-width: 100%;
+    }
+
+    .mdl-card__supporting-text{
+      width:100%;
+      padding: $gs*2;
+    }
+
+    .mdl-card__media{
+      padding: 0 $gs*2;
+      min-height: 200px;
+      display: flex;
+      flex-direction: column-reverse;
+    }
+
+    &__inner{
+      max-width: $max-col-sm;
     }
   }
 }

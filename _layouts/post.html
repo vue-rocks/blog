@@ -1,38 +1,52 @@
 ---
 layout: default
 ---
-<article class="post" itemscope itemtype="http://schema.org/BlogPosting">
+<main class="fdt__post" itemscope itemtype="http://schema.org/BlogPosting">
+  <article class="mdl-grid fdt__post__inner">
+    <section class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+      <header class="mdl-card__media mdl-color-text--grey-50">
+        <h3 itemprop="name headline">{{ page.title }}</h3>
+      </header>
 
-  <header class="post-header">
-    <h1 class="post-title" itemprop="name headline">{{ page.title }}</h1>
-    <p class="post-meta"><time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>{% if page.author %} • <span itemprop="author" itemscope itemtype="http://schema.org/Person"><span itemprop="name">{{ page.author }}</span></span>{% endif %}</p>
-  </header>
+      <section class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+        <p>
+          <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
 
-  <div class="post-content" itemprop="articleBody">
-    {{ content }}
-  </div>
+          {% if page.author %}
+          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
+            <span itemprop="name">{{ page.author }}</span>
+          </span>
+          {% endif %}
+        </p>
+      </section>
 
-  {% if page.comments %}
-  <div id="disqus_thread"></div>
-  <script>
-      /**
-       *  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
-       *  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables
-       */
-      var disqus_config = function () {
-        this.page.url = '{{site.url}}{{site.baseurl}}/{{ page.url }}';
-        this.page.identifier = '{{page.url}}';
-      };
-      (function() {  // DON'T EDIT BELOW THIS LINE
-          var d = document, s = d.createElement('script');
+      <section class="mdl-color-text--grey-700 mdl-card__supporting-text" itemprop="articleBody">
+        {{ content }}
+      </section>
 
-          s.src = '//fadeit.disqus.com/embed.js';
+      {% if page.comments %}
+      <footer class="mdl-color-text--primary-contrast mdl-card__supporting-text comments">
+        <div id="disqus_thread"></div>
+      </footer>
 
-          s.setAttribute('data-timestamp', +new Date());
-          (d.head || d.body).appendChild(s);
-      })();
-  </script>
-  <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
-  {% endif %}
+      <script>
+          var disqus_config = function () {
+            this.page.url = '{{site.url}}{{site.baseurl}}/{{ page.url }}';
+            this.page.identifier = '{{page.url}}';
+          };
+          (function() {  // DON'T EDIT BELOW THIS LINE
+              var d = document, s = d.createElement('script');
 
-</article>
+              s.src = '//fadeit.disqus.com/embed.js';
+
+              s.setAttribute('data-timestamp', +new Date());
+              (d.head || d.body).appendChild(s);
+          })();
+      </script>
+
+      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+      {% endif %}
+    </section>
+
+  </article>
+</main>
