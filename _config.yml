@@ -35,6 +35,7 @@ kramdown:
 
 gems:
   - jekyll-paginate
+  - jekyll-seo-tag
 
 exclude:
   - "node_modules"
@@ -54,6 +55,7 @@ defaults:
       sizeDesktop: 12
       textColor: "grey-50"
       metaColor: "grey-600"
+      image: "https://fadeit.dk/src/assets/img/brand/fadeit_logo_square.png"
 
 
 authors:

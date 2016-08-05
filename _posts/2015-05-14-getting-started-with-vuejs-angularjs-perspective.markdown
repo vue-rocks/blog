@@ -190,17 +190,21 @@ Here’s an overview:
       <td style="width: 33.33333%;">
         <b class="title">Angular Loops</b><br/>
 {% highlight html %}
+{% raw %}
 <li ng-repeat="item in items" class="item-{{$index}}">
-  {% raw %}{{item.myProperty}}{% endraw %}
+  {{item.myProperty}}
 </li>
+{% endraw %}
 {% endhighlight %}
       </td>
       <td style="width: 33.33333%;">
         <b class="title">Vue Loops</b><br/>
 {% highlight html %}
+{% raw %}
 <li v-repeat="items" class="item-{{$index}}">
-  {% raw %}{{myProperty}}{% endraw %}
+  {{myProperty}}
 </li>
+{% endraw %}
 {% endhighlight %}
       </td>
       <td style="width: 33.33333%;">
