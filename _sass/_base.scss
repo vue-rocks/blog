@@ -406,7 +406,7 @@ body{
         }
 
         &:last-child{
-          text-align: right;
+          justify-content: flex-end;
 
           .mdl-button{
             margin-right: 0;
