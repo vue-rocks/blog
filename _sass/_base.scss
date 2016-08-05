@@ -400,11 +400,6 @@ body{
         display: flex;
         align-items: center;
 
-        .mdl-button{
-          flex-shrink: 0;
-          margin-right: $gs/2;
-        }
-
         &:last-child{
           justify-content: flex-end;
 
@@ -412,6 +407,17 @@ body{
             margin-right: 0;
             margin-left: $gs/2;
           }
+        }
+
+        &:hover, &:focus{
+          outline: 0;
+          opacity: 0.8;
+        }
+
+
+        .mdl-button{
+          flex-shrink: 0;
+          margin-right: $gs/2;
         }
       }
     }
