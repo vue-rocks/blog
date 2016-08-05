@@ -17,22 +17,115 @@ First and foremost, what is Vue.js and why should you use it?
 
 Vue is a library for developing interactive web interfaces. Its API is inspired by Angular & Backbone, but you can read more about it in [this guide][vue-guide]. What's more interesting is <u>why use it</u>, especially when you are familiar with Angular. First of all, it's very flexible. It allows mixing and matching all the libraries you love. That means you can create your own little front-end stack. Secondly, it's more snappy because it's simpler and doesn't use dirty checking to observe changes. On top of that, learning Vue doesn't take much time. This will make it easy to bring in new team members.
 
-You can read even more about it in Vue's [FAQ page][vue-faq], where Vue is compared to Angular, React and more.
-
-<small>**Updated 15 May 2015**</small>
+You can read even more about it in Vue's [FAQ page][vue-faq], where Vue is compared to Angular, React and more. <br/><small>**Updated 15 May 2015**</small>
 
 I jumped on the AngularJS train more than 1 year ago and had lots of fun working with it. From August to January 2015 I had the chance to research Angular application structures. The study was in relation to performance, but it touched on many other subjects, such as component reusability and learnability.
 
 I am new to Vue.js, therefore this article will be about my first encounter with the library. Later on I will try to make a more comprehensive analysis.
 
-> Angular <b>1.\*</b> and Vue.js <b>0.11</b> are considered in the article.
+> Angular <b class="title">1.\*</b> and Vue.js <b class="title">0.11</b> are considered in the article.
 > Breaking changes might come in [Vue 0.12][vue-158]. As for Angular, version 2 will be a completely different beast.
 
 ## Vue.js and AngularJS
 
 I felt comfortable with Vue within a few days. It might be because it resembles other frameworks. It might be because of its simplicity, I couldn’t tell. To better portray the similarities & differences between the two, I devised a brief comparison of some of the high-level concepts in Angular and Vue. Here's what I ended up with:
 
-{'rows': {'1': {'columns': {'1': {'content': {'1': {'file': 'table-directive-vue.js.txt', 'language': 'javascript', 'type': 'code'}, '0': {'text': 'Directives', 'type': 'title'}}, 'size': '8'}, '0': {'content': {'1': {'file': 'table-directive.js.txt', 'language': 'javascript', 'type': 'code'}, '0': {'text': 'Directives', 'type': 'title'}}, 'size': '8'}, '2': {'content': {'1': {'text': 'Directives are simpler in Vue; they seem to be more focused. In Angular a directive can be many things, better resembling a ‘Component’ in Vue.', 'type': 'p'}, '0': {'text': 'Notes', 'type': 'title'}}, 'size': '8'}}}, '0': {'columns': {'1': {'content': {'1': {'file': 'table-module-vue.js.txt', 'language': 'javascript', 'type': 'code'}, '0': {'text': 'Components (module equivalent in Vue)', 'type': 'title'}}, 'size': '8'}, '0': {'content': {'1': {'file': 'table-module.js.txt', 'language': 'javascript', 'type': 'code'}, '0': {'text': 'Angular Modules', 'type': 'title'}}, 'size': '8'}, '2': {'content': {'1': {'text': 'Modules are a wrapper in Angular. In Vue they will hold most component logic. <br/><br/>You can see much thought was put into Vue by noticing the small details. For example, one of the component options is ‘name’, a property that customizes the component name (will be displayed in the console, great help for debugging)', 'type': 'p'}, '0': {'text': 'Notes', 'type': 'title'}}, 'size': '8'}}}, '2': {'columns': {'1': {'content': {'1': {'file': 'table-filter-vue.js.txt', 'language': 'javascript', 'type': 'code'}, '0': {'text': 'Filters', 'type': 'title'}}, 'size': '8'}, '0': {'content': {'1': {'file': 'table-filter.js.txt', 'language': 'javascript', 'type': 'code'}, '0': {'text': 'Filters', 'type': 'title'}}, 'size': '8'}, '2': {'content': {'1': {'text': "Filters aren’t much different, although Vue provides read/write options. (see <a href='http://vuejs.org/guide/custom-filter.html' target='_blank'>this guide</a>)", 'type': 'p'}, '0': {'text': 'Notes', 'type': 'title'}}, 'size': '8'}}}}, 'type': 'fake-table', 'header': {'1': {'text': 'Vue.js', 'size': '8'}, '0': {'text': 'AngularJS', 'size': '8'}, '2': {'text': 'Notes', 'size': '8'}}}
+<table class="fdt-table">
+  <thead>
+    <tr>
+      <th>AngularJS</th>
+      <th>Vue.js</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="width: 33.33333%;">
+        <b class="title">Angular Modules</b>
+{% highlight javascript %}
+angular.module('myModule', [...]);
+{% endhighlight %}
+      </td>
+      <td style="width: 33.33333%;">
+        <b class="title">Vue components</b>
+{% highlight javascript %}
+Vue.extend({
+  data: function(){ return {...} },
+  created: function() {...},
+  ready: function() {...},
+  components: {...},
+  methods: {...},
+  watch: {...}
+  //(other props excluded)
+});
+{% endhighlight %}
+      </td>
+      <td style="width: 33.33333%;">
+        <b class="title">Module notes</b><br/>
+
+        Modules are a container in Angular, holding other entities such as controllers, directives, etc. In Vue they hold most component logic.
+      </td>
+    </tr>
+
+    <tr>
+      <td style="width: 33.33333%;">
+        <b class="title">Vue directives</b><br/>
+{% highlight javascript %}
+myModule.directive('directiveName', function (injectables) {
+  return {
+    restrict: 'A',
+    template: '<div></div>',
+    controller: function() { ... },
+    compile: function() {...},
+    link: function() { ... }
+    //(other props excluded)
+  };
+});
+{% endhighlight %}
+      </td>
+      <td style="width: 33.33333%;">
+        <b class="title">Angular directives</b><br/>
+{% highlight javascript %}
+Vue.directive('my-directive', {
+  bind: function () {...},
+  update: function (newValue, oldValue) {...},
+  unbind: function () {...}
+});
+{% endhighlight %}
+      </td>
+      <td style="width: 33.33333%;">
+        <b class="title">Directive notes</b><br/>
+
+        Directives are not as powerful in Vue; they seem to be more focused. In Angular a directive can be many things, better resembling a component in the Vue world. 
+      </td>
+    </tr>
+
+    <tr>
+      <td style="width: 33.33333%;">
+        <b class="title">Vue filters</b><br/>
+{% highlight javascript %}
+myModule.angular.module(‘filterName', [])
+.filter('reverse', function() {
+  return function(input) {...};
+});
+{% endhighlight %}
+      </td>
+      <td style="width: 33.33333%;">
+        <b class="title">Angular filters</b><br/>
+{% highlight javascript %}
+Vue.filter('reverse', function (value) {
+  return function(value){...};
+});
+{% endhighlight %}
+      </td>
+      <td style="width: 33.33333%;">
+        <b class="title">Filter notes</b><br/>
+
+        Filters aren’t much different, although Vue provides read/write options. (see <a href="http://vuejs.org/guide/custom-filter.html" target="_blank">this guide</a>)
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 Because Vue will only help us manage the VM, it won’t tackle some of the challenges that Angular covers out of the box. Services / HTTP reqs, routing, promises (just to name a few) are not among Vue’s concerns. That’s good and bad. Perhaps "bad" is an exaggeration; but it’s a negative aspect for someone that got used to Angular and didn't have to lift a finger for it. In other words, we have to mix and match libraries as we go to cover our needs. That can be quite a task, but some developers love having this kind of control (others think it’s a waste of time). However, once you find a few good libraries, you won’t have to do it again. I think this kind of flexibility is very empowering. Imagine building your own smaller, focused framework (like Angular) on top of a good foundation: Vue.
 
@@ -44,7 +137,141 @@ For the same reasons that’s easy to write templates in Angular, it’s really 
 
 Here’s an overview:
 
-{'rows': {'4': {'columns': {'1': {'content': {'1': {'file': 'table2-vue-conditional-classes.html.txt', 'language': 'markup', 'type': 'code'}, '0': {'text': 'Conditional classes', 'type': 'title'}}, 'size': '8'}, '0': {'content': {'1': {'file': 'table2-conditional-classes.html.txt', 'language': 'markup', 'type': 'code'}, '0': {'text': 'Conditional classes', 'type': 'title'}}, 'size': '8'}, '2': {'content': {'1': {'text': 'Another example that shows similarities. Both also support <em>v-attr/ng-attr</em>.', 'type': 'p'}, '0': {'text': 'Notes', 'type': 'title'}}, 'size': '8'}}}, '1': {'columns': {'1': {'content': {'1': {'file': 'table2-vue-model-binding.html.txt', 'language': 'markup', 'type': 'code'}, '0': {'text': 'Model binding', 'type': 'title'}}, 'size': '8'}, '0': {'content': {'1': {'file': 'table2-model-binding.html.txt', 'language': 'markup', 'type': 'code'}, '0': {'text': 'Model binding', 'type': 'title'}}, 'size': '8'}}}, '5': {'columns': {'1': {'content': {'1': {'file': 'table2-vue-dom-events.html.txt', 'language': 'markup', 'type': 'code'}, '0': {'text': 'Event binding', 'type': 'title'}}, 'size': '8'}, '0': {'content': {'1': {'file': 'table2-dom-events.html.txt', 'language': 'markup', 'type': 'code'}, '0': {'text': 'Event binding', 'type': 'title'}}, 'size': '8'}, '2': {'content': {'1': {'text': "The generic v-on directive makes things more consistent, but I guess it's down to personal preference.", 'type': 'p'}, '0': {'text': 'Notes', 'type': 'title'}}, 'size': '8'}}}, '3': {'columns': {'1': {'content': {'1': {'file': 'table2-vue-conditionals.html.txt', 'language': 'markup', 'type': 'code'}, '0': {'text': 'Conditionals', 'type': 'title'}}, 'size': '8'}, '0': {'content': {'1': {'file': 'table2-conditionals.html.txt', 'language': 'markup', 'type': 'code'}, '0': {'text': 'Conditionals', 'type': 'title'}}, 'size': '8'}}}, '0': {'columns': {'1': {'content': {'1': {'file': 'table2-vue-interpolations.html.txt', 'language': 'markup', 'type': 'code'}, '0': {'text': 'Interpolation', 'type': 'title'}}, 'size': '8'}, '0': {'content': {'1': {'file': 'table2-interpolations.html.txt', 'language': 'markup', 'type': 'code'}, '0': {'text': 'Interpolation', 'type': 'title'}}, 'size': '8'}, '2': {'content': {'1': {'text': 'Unfortunately, if we try to output and object or array, Vue won’t be able to render it (we’ll see <em>[Object]</em>). I always found that useful in Angular. <br/><br/> <b>Update:</b> you can do the same in Vue with the built-in json filter. <em>{{someObject | json}}</em>', 'type': 'p'}, '0': {'text': 'Notes', 'type': 'title'}}, 'size': '8'}}}, '2': {'columns': {'1': {'content': {'1': {'file': 'table2-vue-loops.html.txt', 'language': 'markup', 'type': 'code'}, '0': {'text': 'Loops', 'type': 'title'}}, 'size': '8'}, '0': {'content': {'1': {'file': 'table2-loops.html.txt', 'language': 'markup', 'type': 'code'}, '0': {'text': 'Loops', 'type': 'title'}}, 'size': '8'}, '2': {'content': {'1': {'text': "Both support model options (ex. debounce for a loop filter). BTW, we can also asign repeated objects in Vue <br/><br/> <em>v-repeat='item: items'</em>", 'type': 'p'}, '0': {'text': 'Notes', 'type': 'title'}}, 'size': '8'}}}}, 'type': 'fake-table', 'header': {'1': {'text': 'Vue.js', 'size': '8'}, '0': {'text': 'AngularJS', 'size': '8'}, '2': {'text': 'Notes', 'size': '8'}}}
+<table class="fdt-table">
+  <thead>
+    <tr>
+      <th>AngularJS</th>
+      <th>Vue.js</th>
+      <th>Notes</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="width: 33.33333%;">
+        <b class="title">Angular interpolation</b>
+{% highlight javascript %}
+{% raw %}{{myVariable}}{% endraw %}
+{% endhighlight %}
+      </td>
+      <td style="width: 33.33333%;">
+        <b class="title">Vue interpolation</b>
+{% highlight javascript %}
+{% raw %}{{myVariable}}{% endraw %}
+{% endhighlight %}
+      </td>
+      <td style="width: 33.33333%;">
+        <b class="title">Interpolation notes</b><br/>
+
+        Interpolating an object or array won't work out of the box in Vue ([Object] will be displayed). I always found that useful for debugging in Angular. 
+
+        Vue does come with a built-in json filter for it though: {{someObject | json}}
+      </td>
+    </tr>
+
+    <tr>
+      <td style="width: 33.33333%;">
+        <b class="title">Angular model binding</b><br/>
+{% highlight html %}
+<input type="text" ng-model="myVar">
+ <p ng-bind="myVar"></p>
+{% endhighlight %}
+      </td>
+      <td style="width: 33.33333%;">
+        <b class="title">Vue model binding</b><br/>
+{% highlight html %}
+<input type="text" v-model="myVar">
+ <p v-model="myVar"></p>
+{% endhighlight %}
+      </td>
+      <td style="width: 33.33333%;"></td>
+    </tr>
+
+    <tr>
+      <td style="width: 33.33333%;">
+        <b class="title">Angular Loops</b><br/>
+{% highlight html %}
+<li ng-repeat="item in items" class="item-{{$index}}">
+  {% raw %}{{item.myProperty}}{% endraw %}
+</li>
+{% endhighlight %}
+      </td>
+      <td style="width: 33.33333%;">
+        <b class="title">Vue Loops</b><br/>
+{% highlight html %}
+<li v-repeat="items" class="item-{{$index}}">
+  {% raw %}{{myProperty}}{% endraw %}
+</li>
+{% endhighlight %}
+      </td>
+      <td style="width: 33.33333%;">
+        <b class="title">Loop notes</b><br/>
+
+        Both support model options (ex. debounce for a loop filter). BTW, we can also assign repeated objects in Vue, like in Angular:<br/>
+
+        <b>v-repeat='item: items'</b>
+      </td>
+    </tr>
+
+    <tr>
+      <td style="width: 33.33333%;">
+        <b class="title">Angular conditionals</b><br/>
+{% highlight html %}
+<div ng-if="myVar"></div>
+ <div ng-show="myVar"></div>
+{% endhighlight %}
+      </td>
+      <td style="width: 33.33333%;">
+        <b class="title">Vue conditionals</b><br/>
+{% highlight html %}
+<div v-if="myVar"></div>
+ <div v-show="myVar"></div>
+{% endhighlight %}
+      </td>
+      <td style="width: 33.33333%;"></td>
+    </tr>
+
+    <tr>
+      <td style="width: 33.33333%;">
+        <b class="title">Angular conditional classes</b><br/>
+{% highlight html %}
+<div ng-class="{‘active’: myVar}"></div>
+{% endhighlight %}
+      </td>
+      <td style="width: 33.33333%;">
+        <b class="title">Vue conditional classes</b><br/>
+{% highlight html %}
+<div v-class="active: myVar"></div>
+{% endhighlight %}
+      </td>
+      <td style="width: 33.33333%;">
+        <b class="title">Conditional classes notes</b><br/>
+
+        Another example that shows similarities. <br/>
+        Both also support <b>v-attr/ng-attr</b>.
+      </td>
+    </tr>
+
+    <tr>
+      <td style="width: 33.33333%;">
+        <b class="title">Angular event binding</b><br/>
+{% highlight html %}
+<div ng-click="myMethod($event)"></div>
+{% endhighlight %}
+      </td>
+      <td style="width: 33.33333%;">
+        <b class="title">Vue event binding</b><br/>
+{% highlight html %}
+<div v-on="click: myMethod($event)"></div>
+{% endhighlight %}
+      </td>
+      <td style="width: 33.33333%;">
+        <b class="title">Event binding notes</b><br/>
+
+        The generic <b>v-on</b> directive makes things more consistent than in Angular, but I guess it's down to personal preference.
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 The list goes on. There’s even a v-cloak directive that hides the bindings before they are rendered (as ng-cloak does).
 
@@ -70,7 +297,42 @@ I truly believe Vue is elegant when it comes to Data flow & control. It felt nat
 
 One approach for writing services is to use a `HTTP` -> `Service` -> `Component` mechanism. HTTP has to be generic, so we can extend it for each object:
 
-{'header': {'1': {'text': 'JavaScript', 'size': '12'}, '0': {'text': 'CoffeeScript', 'size': '12'}}, 'rows': {'0': {'columns': {'1': {'content': {'0': {'file': 'structure1.js.txt', 'language': 'javascript', 'type': 'code'}}, 'size': '12'}, '0': {'content': {'0': {'file': 'structure1.coffee.txt', 'language': 'coffeescript', 'type': 'code'}}, 'size': '12'}}}}, 'type': 'fake-table', 'largeCode': True}
+<table class="fdt-table">
+  <thead>
+    <tr>
+      <th>CoffeeScript</th>
+      <th>JavaScript</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="width: 50%;">
+        <b class="title">Angular interpolation</b>
+{% highlight coffeescript %}
+class HTTP
+  constructor: () -> ...
+  get: () -> ...
+  post: (url, data) -> ...
+  delete: (url) -> ...
+  patch: (url, data) -> ...
+{% endhighlight %}
+      </td>
+      <td style="width: 50%;">
+        <b class="title">Vue interpolation</b>
+{% highlight javascript %}
+HTTP = (function() {
+  HTTP.prototype.get = function() {...};
+  HTTP.prototype.post = function(url, data) {...};
+  HTTP.prototype["delete"] = function(url) {...};
+  HTTP.prototype.patch = function(url, data) {...};
+
+  return HTTP;
+})();
+{% endhighlight %}
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 Just for reference, a patch request using reqwest looks like this:
 
