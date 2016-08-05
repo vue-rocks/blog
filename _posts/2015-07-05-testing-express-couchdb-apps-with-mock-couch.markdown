@@ -254,7 +254,7 @@ module.exports = DAL
 What's missing is the endpoint and test implementation. Let's start with the tests.
 
 
-```bash
+```diff
 diff --git a/specs/sofas.spec.coffee b/specs/sofas.spec.coffee
 index 8c1eb84..efbff58 100644
 --- a/specs/sofas.spec.coffee
@@ -326,7 +326,7 @@ index 8c1eb84..efbff58 100644
 Now the endpoints:
 
 
-```bash
+```diff
 diff --git a/server.coffee b/server.coffee
 index 98f1918..a0d30ce 100644
 --- a/server.coffee
@@ -384,7 +384,7 @@ Node provides a couple of ways to create processes out of the box. We'll use one
 OK, less talk and more forking. We'll do the forking in <em>gulp test</em> task:
 
 
-```bash
+```diff
 diff --git a/gulpfile.coffee b/gulpfile.coffee
 index cbd61b5..1200834 100644
 --- a/gulpfile.coffee
@@ -445,7 +445,7 @@ index cbd61b5..1200834 100644
 Also, we need a slight change to the test setup:
 
 
-```bash
+```diff
 diff --git a/specs/sofas.spec.coffee b/specs/sofas.spec.coffee
 index efbff58..93e7bd2 100644
 --- a/specs/sofas.spec.coffee
