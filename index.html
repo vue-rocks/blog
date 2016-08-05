@@ -5,7 +5,7 @@ layout: default
 <div class="home">
   <div class="blog mdl-layout mdl-js-layout">
     <main class="mdl-layout__content">
-      <div class="blog__posts mdl-grid">
+      <section class="blog__posts mdl-grid">
         {% for post in paginator.posts %}
         <a href="{{ post.url | prepend: site.baseurl }}" class="mdl-card mdl-cell mdl-cell--{{post.size}}-col mdl-cell mdl-cell--{{post.sizeDesktop}}-col-desktop">
           <span class="mdl-card__media mdl-color-text--{{post.textColor}}">
@@ -22,22 +22,30 @@ layout: default
           </div>
         </a>
         {% endfor %}
-      </div>
 
-      <!-- Pagination links -->
-      <div class="pagination">
-        {% if paginator.previous_page %}
-          <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="previous">Previous</a>
-        {% else %}
-          <span class="previous">Previous</span>
-        {% endif %}
-        <span class="page_number ">Page: {{ paginator.page }} of {{ paginator.total_pages }}</span>
-        {% if paginator.next_page %}
-          <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="next">Next</a>
-        {% else %}
-          <span class="next ">Next</span>
-        {% endif %}
-      </div>
+        <!-- Pagination links -->
+        <nav class="pagination mdl-color-text--grey-50 mdl-cell mdl-cell--12-col">
+          {% if paginator.previous_page %}
+          <a href="{{ paginator.previous_page_path | prepend: site.baseurl }}" class="pagination__button">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color-text--grey-900" role="presentation">
+              <i class="material-icons">arrow_back</i>
+            </button>
+            Newer
+          </a>
+          {% endif %}
+
+          <div class="section-spacer"></div>
+
+          {% if paginator.next_page %}
+          <a href="{{ paginator.next_page_path | prepend: site.baseurl }}" class="pagination__button">
+            Older
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color-text--grey-900" role="presentation">
+              <i class="material-icons">arrow_forward</i>
+            </button>
+          </a>
+          {% endif %}
+        </nav>
+      </section>
     </main>
   </div>
 </div>

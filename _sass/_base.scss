@@ -7,16 +7,14 @@
 
 body{
   background-color:#f8f8f8;
-  min-height:100vh;
+  min-height: 100vh;
+  display:flex;
+  flex-direction: column;
 }
 
 /*
  * 2. Material styles
  */
-.material-icons{
-  color:$w;
-}
-
 .blog {
   font-family: 'Roboto', 'Helvetica', sans-serif;
 
@@ -166,6 +164,21 @@ body{
     font-size: 0.9em;
     color: $g5;
   }
+
+  .pagination{
+    margin:$gs*2 0;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: white;
+    font-weight: 500;
+
+    &__button{
+      text-decoration: none;
+      color: $g1;
+    }
+  }
 }
 
 /*
@@ -196,23 +209,10 @@ body{
   }
 
   &__header-row{
-    padding: 0 $gs;
+    padding: $gs;
+    height: auto;
     width: 100%;
     flex-wrap: wrap;
-
-    &__title{
-      align-self: flex-start;
-      padding-top: $gs/2;
-    }
-
-    &__subtitle{
-      width: 100%;
-      flex-shrink: 0;
-      flex-grow: 1;
-      margin-top: -20px;
-      text-decoration: none;
-      color: $g6;
-    }
 
     .mdl-navigation{
       margin-left:auto;
@@ -232,7 +232,16 @@ body{
   }
 
   &__footer{
-    margin-top: $gs*2;
+    margin-top: auto;
+
+    .mdl-mega-footer__link-list{
+      width:100%;
+      display:flex;
+    }
+
+    &__made{
+      margin-left:auto;
+    }
   }
 }
 
