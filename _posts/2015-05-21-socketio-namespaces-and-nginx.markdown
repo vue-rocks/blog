@@ -4,7 +4,7 @@ title:  "Proxy Custom Socket.IO Namespaces with NGINX"
 description: "Proxying custom Socket.IO namespaces with NGINX is not straightforward. Hopefully this will save time for the next person attempting it."
 date:   2015-05-21 22:30:00+02:00
 size: 12
-sizeDesktop: 4
+sizeDesktop: 6
 textColor: grey-50
 metaColor: grey-600
 comments: true

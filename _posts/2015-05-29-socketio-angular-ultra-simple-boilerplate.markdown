@@ -4,7 +4,7 @@ title:  "Socket.io with AngularJS boilerplate"
 description: "In this post we'll be looking at a smallest possible socket.io chat application to get you started."
 date:   2015-05-29 13:18:15+02:00
 size: 12
-sizeDesktop: 4
+sizeDesktop: 6
 textColor: grey-50
 metaColor: grey-600
 comments: true

@@ -4,7 +4,7 @@ title:  "HTML emails & email signatures, how hard can it be?!"
 description: "Maybe it's about time to fix HTML email templates. Can we make writing CSS easier? What about ditching templates? Are we doomed forever?"
 date:   2015-10-21 02:23:32+02:00
 size: 12
-sizeDesktop: 4
+sizeDesktop: 12
 textColor: grey-50
 metaColor: grey-600
 comments: true
