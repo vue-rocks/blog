@@ -286,7 +286,7 @@ body{
     &__content{
       flex-direction: column;
 
-      h1, h2, h3, h4, h5, h6, p, ul, ol{
+      h1, h2, h3, h4, h5, h6, p, ul, ol, table{
         width: 100%;
         font-weight: 300;
         letter-spacing: 0.1px;
@@ -342,7 +342,21 @@ body{
         margin: $gs #{-$gs*2};
         background-color: $g7;
         border-top: 1px solid $g8;
-        border-bottom: 1px solid $g8;
+        border-bottom: 1px solid $g7;
+
+        &[src*='.svg']{
+          width: calc(100% + 64px);
+        }
+      }
+
+      table{
+        width: calc(100% + #{$gs*4});
+        margin: $gs #{-$gs*2};
+
+        td{
+          border:0;
+          border-bottom: 1px solid $g8;
+        }
       }
 
       blockquote{
@@ -468,7 +482,53 @@ div.highlighter-rouge{
 }
 
 /*
- * 5. Fixes for IE 10
+ * 5. Markdown extras
+ */
+.fdt-table{
+  text-align: left;
+
+  .title{
+    display: inline-block;
+    margin-bottom: $gs/2;
+  }
+
+  .highlight{
+    margin: 0 #{-$gs};
+    width: calc(100% + #{$gs*2 - 1});
+    padding: $gs/4 $gs/4 $gs/2 $gs/4;
+
+    pre{
+      margin: 0;
+    }
+
+    code{
+      font-size: 0.7em;
+      line-height: 1.2em;
+      padding: $gs/4;
+      height: 100%;
+    }
+  }
+
+  thead{
+    th{
+      padding: $gs/2 $gs;
+      margin-bottom: 0;
+      border-right: 1px solid $w;
+      color: $ws;
+      background-color: $g4;
+      font-weight: 300;
+      font-size:1.3em;
+    }
+  }
+
+  td{
+    vertical-align: top;
+    padding: $gs;
+  }
+}
+
+/*
+ * 6. Fixes for IE 10
  */
 .mdl-grid {
   display: flex !important;

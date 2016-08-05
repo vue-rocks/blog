@@ -23,13 +23,13 @@ In all seriousness now, you should never have to write it. However, there are ma
 
 I am not writing this article because I have it all figured it out, but because I have some clues on how to improve the quality of CSS. I don't want it to feel like a set of rules, but rather the start of a constructive dialog.
 
-## The solutions today
-
 ## Some pre-processor context
 
 We need to get one thing straight. I am using a CSS pre-processors (LESS, have been using SASS too) and I can't go back. It makes my stylesheets more consistent and enables me to write less (duh) code. It also makes it easy to change global properties that (ironically) truly cascade on all elements. This article is not about pre-processors and they are most certainly NOT a solution to CSS organization issues. While they might be helpful, they bring their own problems. I will touch the subject here and there, because many front-enders rely on pre-processors to keep their sanity.
 
-## Properties
+## The solutions today
+
+### Properties
 
 Let's start with the easy part.
 
@@ -37,11 +37,11 @@ When it comes to properties, what works and what doesn't?
 
 I've been going the 'random way' until now and everything turned out ok. I wouldn't say no to another approach. Here are the most popular options:
 
-- Order by line length
-- Alphabetise
-- Group by type
+1. Group by type
+2. Order by line length
+3. Alphabetize
 
-## 1. Group by type
+#### 1. Group by type
 
 This method was once (and maybe still is) the most popular method of writing properties. Nicolas Gallager's [idiomatic CSS][idiomatic-css] recommends this style for smaller teams, but suggests alphabetising for larger teams.
 
@@ -75,7 +75,7 @@ section {
 
 We are free to add our own types, such as `Effects` (can be border-radius, box-shadow, etc), `Animations & Transitions` or `Transforms`. There aren't any rules, we can create our own as long as we are consistent. The downside is that the rest of the team has to learn these rules, which is not very efficient.
 
-## 2. Order by line length
+#### 2. Order by line length
 
 This is the 'old school' method. Some developers like it because it decreases the amount of lines and gives them a better overview of the stylesheet. I don't think this method is realistic today, especially when we have to pile up a bunch of duplicate properties to support all browsers.
 
@@ -107,15 +107,15 @@ I wonder if anybody is still following the order by line approach today. I would
 
 By the way, what's the deal with the autoprefixer? It's very helpful. If you are not using one, head over to [grunt autoprefixer][grunt-autoprefixer] or [gulp autoprefixer][gulp-autoprefixer] and expect to get your mind blown. You'll drastically reduce the size of your CSS source and increase it's readability. If you are using a pre-processors you will also get rid of a huge chunk of mixins.
 
-## 3. Alphabetise
+#### 3. Alphabetize
 
 The last but not the least method is alphabetising properties. Many developers like the consistency that it brings, that's why it works well for bigger teams. Any other method you might choose is often adjusted to a developer's mindset, but this one always stays the same. However, CSS properties have a strong relationship - for example absolute positioning with z-index, left or top. It's hard to visualise these relationships when alphabetising.
 
-There's more criticism: we certainly don't write CSS alphabetically, therefore developers have to invest extra time to alphabetise declarations after they wrote them. What about for those using a pre-processor, how will we alphabetise mixins?
+There's more criticism: we certainly don't write CSS alphabetically, therefore developers have to invest extra time to alphabetize declarations after they wrote them. What about for those using a pre-processor, how will we alphabetize mixins?
 
-Should we actually follow any rules while writing properties? In all honesty, I never felt the need to add rules, random works just fine. At the same time, I haven't worked in a large team of front-enders. Maybe there is a point to alphabetise, but it certainly doesn't feel wrong to randomly write the properties for me.
+Should we actually follow any rules while writing properties? In all honesty, I never felt the need to add rules, random works just fine. At the same time, I haven't worked in a large team of front-enders. Maybe there is a point to alphabetize, but it certainly doesn't feel wrong to randomly write the properties for me.
 
-## Shorthand
+#### Shorthand (bonus)
 
 To wrap up the properties, here's another interesting topic. Should we use shorthand or write it all down? The answer is: it depends. If you are talking about box-model properties, it sometimes makes sense to use shorthand. I use it in the following circumstances:
 
@@ -162,7 +162,7 @@ section {
 
 For some properties it makes sense to generally use shorthand, like border-radius. There is no simple answer to 'should I use shorthand'. My opinion is we have to think about each property and decide on the spot. I might start with shorthand and change it later when I notice some redundant properties.
 
-## Splitting CSS info files
+### Splitting CSS info files
 
 This is were the 'pro' territory begins. It's not because it's hard to do (it used to be harder), but you have to know what you're doing. You need to have a clear idea of what CSS you'll write and how it's going to be connected. Call it 'CSS architecture' if you will.
 
@@ -179,12 +179,10 @@ Of course, there's more to SMACSS than this - but I won't get into details. This
 
 I'll leave this one open. However, I have to say that this kind of structure has never worked for me. My team members weren't happy either. It's hard to find declarations and most importantly: it doesn't align with the cascade.
 
-## The cascade / specificity
+### The cascade / specificity
 
-Oh boy, this is a big one.
-
-Let's get the basics right first and then you'll see why specificity can be a bitch.
-
+Oh boy, this is a big one.<br/>
+Let's get the basics right first and then you'll see why specificity can be a bitch.<br/>
 In a nutshell, CSS properties are applied based on the following model:
 
 `inline style > ID > class / attributes / pseudo-class > element / pseudo-element`
@@ -234,7 +232,7 @@ That's the least of the problems though. Specificity can single-handedly ruin CS
 
 > Rule number one while writing CSS: be specific only when truly necessary.
 
-## Element tree indentation
+### Element tree indentation
 
 Specificity used to be a common problem with pre-processor users. The advertisement for both SASS and LESS that got a lot of developers to use them was: 'reflect your HTML (or DOM) structure in your stylesheet'.
 
@@ -269,7 +267,7 @@ header .navigation .logo {
 We could write the following LESS/SASS code:
 
 
-```less
+```sass
 header{
   background-color: blue;
 
@@ -283,13 +281,12 @@ header{
 }
 ```
 
-If that doesn't impress you, it should. It helps us easier implement something called OOCSS - you guessed it - object oriented CSS. It's not object oriented in a true sense, but it encourages the development of components that are independent, self-contained and highly reusable. (there's also more to OOCSS, but I again won't go into details)
+If that doesn't impress you, it should. It helps us easier implement something called OOCSS - you guessed it - object oriented CSS. It's not object oriented in a true sense, but it encourages the development of components that are independent, self-contained and highly reusable (there's also more to OOCSS, but I again won't go into details).
 
-The downside of this is being specific all the time, which we should avoid. Be specific only when truly necessary, remember?
-
+The downside of this is being specific all the time, which we should avoid. Be specific only when truly necessary, remember?<br/>
 There's a way around this too.
 
-## Block, element, modifier
+### Block, element, modifier
 
 BEM is a naming convention that makes css selectors more informative and adds a certain amount of strictness. The pattern it introduces is the following:
 
@@ -313,7 +310,7 @@ Specificity is now achieved by the naming conventions. What it lacks is the nest
 Keep in mind that there are several variations of BEM conventions, but the core concept is the same for all of them. For some time now pre-processors introduced BEM support, which enables us to simulate the DOM structure & use proper nesting - without having specificity troubles. Both LESS and SASS support a form of the following:
 
 
-```less
+```sass
 .navigation {
   &__logo {
     &__image {}
