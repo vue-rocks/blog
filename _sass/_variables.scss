@@ -28,6 +28,6 @@ $fdt-dark: darken($fdt, 10%);
 $color-primary: $fdt;
 $color-primary-dark: red($fdt-dark), green($fdt-dark), blue($fdt-dark);
 $color-accent: red($fdt), green($fdt), blue($fdt);
-$color-primary-contrast: $w;
-$color-accent-contrast: $w;
+$color-primary-contrast: red($g2), green($g2), blue($g2);
+$color-accent-contrast: red($w), green($w), blue($w);
 

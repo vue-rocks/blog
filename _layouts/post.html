@@ -1,7 +1,7 @@
 ---
 layout: default
 ---
-<main class="fdt__post" itemscope itemtype="http://schema.org/BlogPosting">
+<main class="blog fdt__post" itemscope itemtype="http://schema.org/BlogPosting">
   <article class="mdl-grid fdt__post__inner">
     <section class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
       <header class="mdl-card__media mdl-color-text--grey-50">
@@ -9,43 +9,70 @@ layout: default
       </header>
 
       <section class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-        <p>
-          <time datetime="{{ page.date | date_to_xmlschema }}" itemprop="datePublished">{{ page.date | date: "%b %-d, %Y" }}</time>
+        <div class="minilogo" style="background-image: url(https://s.gravatar.com/avatar/{{site.authors[page.author].gravatar}});"></div>
 
-          {% if page.author %}
-          <span itemprop="author" itemscope itemtype="http://schema.org/Person">
-            <span itemprop="name">{{ page.author }}</span>
-          </span>
-          {% endif %}
-        </p>
+        <div>
+          <strong class="author">{{ site.authors[page.author].display_name }}</strong>
+          <time datetime="{{ page.date | date_to_xmlschema }}" class="date">{{ page.date | date: "%b %-d, %Y" }}</time>
+        </div>
       </section>
 
-      <section class="mdl-color-text--grey-700 mdl-card__supporting-text" itemprop="articleBody">
+      <section class="mdl-color-text--grey-700 mdl-card__supporting-text fdt__post__content" itemprop="articleBody">
         {{ content }}
       </section>
 
+
       {% if page.comments %}
-      <footer class="mdl-color-text--primary-contrast mdl-card__supporting-text comments">
-        <div id="disqus_thread"></div>
-      </footer>
+        <section class="mdl-color-text--primary-contrast mdl-card__supporting-text fdt__post__comments">
+          <div id="disqus_thread" style="width:100%; height:auto;"></div>
+        </section>
 
-      <script>
-          var disqus_config = function () {
-            this.page.url = '{{site.url}}{{site.baseurl}}/{{ page.url }}';
-            this.page.identifier = '{{page.url}}';
-          };
-          (function() {  // DON'T EDIT BELOW THIS LINE
-              var d = document, s = d.createElement('script');
+        <script>
+            var disqus_config = function () {
+              this.page.url = '{{site.url}}{{site.baseurl}}/{{ page.url }}';
+              this.page.identifier = '{{page.url}}';
+            };
+            (function() {  // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
 
-              s.src = '//fadeit.disqus.com/embed.js';
+                s.src = '//fadeit.disqus.com/embed.js';
 
-              s.setAttribute('data-timestamp', +new Date());
-              (d.head || d.body).appendChild(s);
-          })();
-      </script>
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
 
-      <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
       {% endif %}
+    </section>
+
+    <section class="mdl-card mdl-card--collapse mdl-card__supporting-text mdl-shadow--4dp fdt__post__inner fdt__post__recommended ">
+      <!-- @todo more attractive recommendations -->
+      <footer class="mdl-card__media">
+        <nav class="pagination mdl-color-text--grey-50">
+          {% if page.next.url %}
+          <a href="{{ page.next.url | prepend: site.baseurl }}" class="pagination__button">
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color-text--white" role="presentation">
+              <i class="material-icons">arrow_back</i>
+            </button>
+            {{page.next.title}}
+          </a>
+
+          {% endif %}
+
+          <div class="section-spacer"></div>
+
+          {% if page.previous.url %}
+          <a href="{{ page.previous.url | prepend: site.baseurl }}" class="pagination__button">
+            {{page.previous.title}}
+            <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color-text--white" role="presentation">
+              <i class="material-icons">arrow_forward</i>
+            </button>
+          </a>
+
+          {% endif %}
+        </nav>
+      </footer>
     </section>
 
   </article>

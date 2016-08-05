@@ -11,7 +11,7 @@ comments: true
 author: sander
 ---
 
-When setting up Mailgun (MG) & Digital Ocean (DO) I ran into unexpected complications. Unfortunately DNS configuration feedback l<font size="4">&infin;</font>p takes long time (as DNS settings propagate), so it ended taking me some days just to try couple configurations. There are some misleading tutorials out there as-well, so hopefully I can clear it once for all.
+When setting up Mailgun (MG) & Digital Ocean (DO) I ran into unexpected complications. Unfortunately DNS configuration feedback l<font size="4" style="position:relative; top:2px;">&infin;</font>p takes long time (as DNS settings propagate), so it ended taking me some days just to try couple configurations. There are some misleading tutorials out there as-well, so hopefully I can clear it once for all.
 
 So the first gotcha with DO is that the domain name is automatically added to the DNS records, therefore if MG setting says `email.fadeit.dk`, then that means only `email` should be entered in DO:
 

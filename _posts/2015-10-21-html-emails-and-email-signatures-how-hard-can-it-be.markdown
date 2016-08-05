@@ -54,8 +54,7 @@ There's no way to get rid of tables / nested tables. There is just hope and tear
 As you probably figured out from the intro, I got fed up with all of this. That inline s\*\*\* is impossible to maintain. So I started on a very basic (I thought) gulp build system to reduce my increasingly high blood pressure. About 10 npm modules later, I realized this entire business could take a couple of hours.
 
 My attempt to destroy inline styles and attributes was fairly successful. I used [gulp-inline-css][gulp-inline-css], thanks to [@jonkemp][jonkemp].
-
-<small>By the way, inlining CSS is the new black (performance benefits), check out [this cool lib][critical]</small>.
+<br/><small>By the way, inlining CSS is the new black (performance benefits), check out [this cool lib][critical]</small>.
 
 Unfortunately, you can't get rid of all of them. I learned that if you wish to be on the safe side, you should use attributes whenever you can (progressive enhancement, remember?). Here are some of the things that don't work:
 

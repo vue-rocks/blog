@@ -107,6 +107,10 @@ body{
         margin-left: 0;
       }
     }
+
+    &--collapse{
+      min-height:0;
+    }
   }
 
   .meta {
@@ -250,30 +254,176 @@ body{
     justify-content: center;
     width: 100%;
 
-    img{
-      max-width: 100%;
-    }
-
     .mdl-card__supporting-text{
       width:100%;
       padding: $gs*2;
     }
 
     .mdl-card__media{
-      padding: 0 $gs*2;
+      padding: 0 $gs*2 $gs*2 $gs*2;
       min-height: 200px;
       display: flex;
       flex-direction: column-reverse;
+
+      h3{
+        font-weight: 300;
+        width: 100%;
+      }
     }
 
     &__inner{
+      width: 100%;
       max-width: $max-col-sm;
+    }
+
+    &__content{
+      flex-direction: column;
+
+      h1, h2, h3, h4, h5, h6, p, ul, ol{
+        width: 100%;
+        font-weight: 300;
+        letter-spacing: 0.1px;
+      }
+
+      h1, h2, h3, h4, h5, h6{
+        margin-bottom: 0;
+      }
+
+      h1{
+        font-size: 2.3em;
+      }
+
+      h2{
+        font-size: 2em;
+      }
+
+      h3{
+        font-size: 1.7em;
+      }
+
+      h4{
+        font-size: 1.4em;
+      }
+
+      h5{
+        font-size: 1.2em;
+      }
+
+      h6{
+        font-size: 1.2em;
+        font-weight: bold;
+      }
+
+      p{
+        margin-bottom: $gs*1.5;
+
+        & + ol, & + ul{
+          margin-top: -$gs;
+        }
+      }
+
+      img{
+        width: auto;
+        max-width: calc(100% + #{$gs*4});
+        margin: $gs #{-$gs*2};
+        background-color: $g7;
+        border-top: 1px solid $g8;
+        border-bottom: 1px solid $g8;
+      }
+
+      blockquote{
+        width: calc(100% + #{$gs*4});
+        background-color: $g8;
+        border-left: 4px solid $g7;
+        font-size: 1em;
+        line-height: 1.5em;
+        padding: $gs $gs*2;
+        margin: 0 #{-$gs*2} $gs #{-$gs*2};
+        font-style: normal;
+
+        p{
+          margin: 0;
+        }
+
+        &:after, &:before{
+          display: none;
+        }
+      }
+
+      code.highlighter-rouge{
+        padding: 5px 8px;
+        background-color: $ws;
+        font-weight: 400;
+        text-decoration: none;
+        font-style: normal;
+        font-family: inherit;
+      }
+
+      div.highlighter-rouge{
+        width: 100%;
+      }
+
+      &.mdl-card__supporting-text{
+        padding-top: 0;
+      }
+    }
+
+    &__comments{
+      background-color: $g8;
+    }
+
+    &__recommended{
+      margin: $gs $gs/2;
+      width: calc(100% - #{$gs});
+      flex-direction: column;
+      justify-content: center;
+
+      .mdl-card__media{
+        flex-direction: row;
+        margin: #{-$gs*2};
+        padding: 0 $gs*2;
+        width: calc(100% + #{$gs*4});
+        align-items: center;
+        cursor: default;
+        min-height: 0;
+      }
+
+      .pagination{
+        width: 100%;
+      }
+
+      a{
+        display: inline-block;
+        width: calc(50% - #{$gs});
+
+        &:last-child{
+          text-align: right;
+        }
+      }
+
     }
   }
 }
 
 /*
- * 4. Fixes for IE 10
+ * 4. Code highlight improvements.
+ */
+.highlight{
+  width: calc(100% + #{$gs*4});
+  margin: 0 #{-$gs*2};
+
+  table{
+    width: 100%;
+
+    .gutter{
+      color: rgba(255, 255, 255, 0.15);
+      padding-right: $gs;
+    }
+  }
+}
+
+/*
+ * 5. Fixes for IE 10
  */
 .mdl-grid {
   display: flex !important;
