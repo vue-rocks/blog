@@ -13,6 +13,7 @@ baseurl: "/blog"
 url: "https://fadeit.dk"
 twitter_username: fadeitdk
 github_username:  fadeit
+google_analytics_code: UA-47022100-1
 permalink: pretty
 markdown: kramdown
 highlighter: rouge
