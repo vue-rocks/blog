@@ -63,6 +63,8 @@ tag_feed_dir: tag_atom
 paginate: 10
 paginate_path: "/:num/"
 
+ampdir: "amp/"
+
 # Post defaults
 defaults:
   -

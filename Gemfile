@@ -6,5 +6,7 @@ gem "jekyll-sitemap"
 gem 'jekyll-tagging'
 gem "jekyll-watch"
 gem "autoprefixer-rails"
+gem "fastimage"
 gem "kramdown"
+gem "nokogiri"
 gem "rouge"
