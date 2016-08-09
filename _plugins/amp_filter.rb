@@ -16,6 +16,7 @@ module Jekyll
           image['width']  = wi
           image['height'] = he
         else
+          image['src'] = image['src'].sub! '{{ site.baseurl }}', '/blog'
           if image['src'].start_with?('http://', 'https://')
             src = image['src']
           else

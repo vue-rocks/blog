@@ -18,6 +18,9 @@ jekyll build
 ```
 
 
+##AMP
+The plugin is kinda working, but there are problems with svg & base url. For updates, check [this](https://github.com/juusaw/amp-jekyll).
+
 ##Tips on design
 When setting text/meta colors, check [all colors for reference](https://www.materialui.co/colors).
 
