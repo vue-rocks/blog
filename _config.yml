@@ -6,10 +6,10 @@
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: fadeit blog
+title: fadeit /blog - development and design articles for all you console cowboys
 email: info@fadeit.dk
 description: > # this means to ignore newlines until "baseurl:"
-  Our blog is a great place to find tech-related articles and tutorials to kick-start your next project. We love to share our knowledge and help others learn from our experience.
+  Our blog is a great place to find tech-related articles & tutorials to kick-start your next project. We love to share our knowledge and help others learn from our experience both in development and design.
 baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "https://fadeit.dk" # the base hostname & protocol for your site
 twitter_username: fadeitdk
