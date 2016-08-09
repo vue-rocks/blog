@@ -44,6 +44,12 @@ exclude:
   - Gemfile
   - Gemfile.lock
 
+tag_page_layout: tag_page
+tag_page_dir: tag
+
+tag_feed_layout: tag_feed
+tag_feed_dir: tag_atom
+
 paginate: 10
 paginate_path: "/:num/"
 

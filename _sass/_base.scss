@@ -435,6 +435,52 @@ body{
         }
       }
     }
+
+    &__tags{
+      width: 100%;
+
+      a{
+        margin: $gs/2;
+        text-decoration: none;
+      }
+    }
+  }
+
+  &__tag-feed{
+    h3{
+      padding: 0;
+    }
+
+    .mdl-list{
+      padding: 0;
+
+      a{
+        text-decoration: none;
+      }
+
+      &__item{
+        padding: 0;
+        margin-bottom: $gs*3;
+      }
+
+      &__item-primary-content{
+        height: auto;
+      }
+
+      &__item-text-body{
+        height: auto;
+      }
+    }
+
+    &__tags{
+      display: inline-block;
+      margin-top: $gs/2;
+
+      a{
+        text-decoration: none;
+        margin-right: $gs/2;
+      }
+    }
   }
 }
 
