@@ -3,7 +3,6 @@ layout: post
 title:  "Blog: open for business"
 description: "We're super excited to launch a blog section on our website. We'll be writing about design, tech, code and everything in between."
 date:   2015-01-17 17:00:00 +0200
-categories: hello
 size: 12
 sizeDesktop: 4
 textColor: grey-50

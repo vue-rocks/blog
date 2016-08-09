@@ -14,6 +14,7 @@ baseurl: "/blog" # the subpath of your site, e.g. /blog
 url: "https://fadeit.dk" # the base hostname & protocol for your site
 twitter_username: fadeitdk
 github_username:  fadeit
+google_analytics_code: UA-47022100-1
 permalink: pretty
 markdown: kramdown
 highlighter: rouge
@@ -29,15 +30,19 @@ kramdown:
   syntax_highlighter_opts:
     # Rouge Options › https://github.com/jneen/rouge#full-options
     css_class: 'highlight'
-    #line_numbers: true
 
 gems:
   - jekyll-paginate
   - jekyll-seo-tag
+  - jekyll-sitemap
 
 exclude:
-  - "node_modules"
-  - "package.json"
+  - node_modules
+  - package.json
+  - package.json
+  - README.md
+  - Gemfile
+  - Gemfile.lock
 
 paginate: 10
 paginate_path: "/:num/"

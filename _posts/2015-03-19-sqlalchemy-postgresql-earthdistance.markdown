@@ -24,13 +24,13 @@ def get_companies_from_amsterdam():
     loc_amsterdam = func.ll_to_earth(52.3667, 4.9000)
     loc_company = func.ll_to_earth(Company.lat, Company.lng)
     distance_func = func.earth_distance(loc_amsterdam, loc_company)
-    query = db.session.query(Company, distance_func).order_by(distance_func) 
-    
+    query = db.session.query(Company, distance_func).order_by(distance_func)
+
     #Resultset is no longer list of Company, but a list of tuples.
     result = query.all()
-    mapped = []                                                                                                                  
+    mapped = []
     for row in result:
-        company = row[0] 
+        company = row[0]
         company.distance = row[1]
         mapped.append(company)
     return mapped

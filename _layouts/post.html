@@ -30,7 +30,7 @@ layout: default
 
         <script>
             var disqus_config = function () {
-              this.page.url = '{{site.url}}{{site.baseurl}}/{{ page.url }}';
+              this.page.url = '{{site.url}}{{site.baseurl}}{{ page.url }}';
               this.page.identifier = '{{page.url}}';
             };
             (function() {  // DON'T EDIT BELOW THIS LINE
@@ -51,21 +51,22 @@ layout: default
       <!-- @todo more attractive recommendations -->
       <footer class="mdl-card__media">
         <nav class="pagination mdl-color-text--grey-50">
-          {% if page.next.url %}
-          <a href="{{ page.next.url | prepend: site.baseurl }}" class="pagination__button">
+
+          {% if page.previous.url %}
+          <a href="{{ page.previous.url | prepend: site.baseurl }}" class="pagination__button">
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color-text--white" role="presentation">
               <i class="material-icons">arrow_back</i>
             </button>
-            {{page.next.title}}
+            {{page.previous.title}}
           </a>
 
           {% endif %}
 
           <div class="section-spacer"></div>
 
-          {% if page.previous.url %}
-          <a href="{{ page.previous.url | prepend: site.baseurl }}" class="pagination__button">
-            {{page.previous.title}}
+          {% if page.next.url %}
+          <a href="{{ page.next.url | prepend: site.baseurl }}" class="pagination__button">
+            {{page.next.title}}
             <button class="mdl-button mdl-js-button mdl-js-ripple-effect mdl-button--icon mdl-color-text--white" role="presentation">
               <i class="material-icons">arrow_forward</i>
             </button>
