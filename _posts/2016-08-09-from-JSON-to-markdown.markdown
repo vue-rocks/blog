@@ -10,7 +10,7 @@ textColor: grey-50
 metaColor: grey-600
 comments: true
 author: fadeit
-tags: blog, jekyll, angular, static site generator, json, performance, amp
+tags: [jekyll, angular, static site generator, json, performance, amp, blog]
 ---
 
 It's a big day today: we've gone Jekyll - the state of the union static site generator. 
