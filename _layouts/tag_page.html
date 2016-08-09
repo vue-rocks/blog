@@ -1,0 +1,35 @@
+---
+layout: default
+---
+<main class="blog fdt__post fdt__tag-feed">
+  <article class="mdl-grid fdt__post__inner">
+    <h3>Posts tagged with <b>{{ page.tag }}</b></h3>
+
+    <ul class="mdl-list">
+      {% for post in page.posts %}
+      <li class="mdl-list__item mdl-list__item--three-line">
+        <span class="mdl-list__item-primary-content">
+          <a href="{{ post.url | prepend: site.baseurl }}" >
+            <span>{{ post.title }}</span>
+            <span class="mdl-list__item-text-body">
+              <small>{{ post.date | date: "%b %-d %Y" }}</small><br/>
+              {{ post.description }}
+            </span>
+          </a>
+
+          <span class="fdt__tag-feed__tags">
+            <small>
+              {% for tag in post.tags %}
+                <a href="{{ site.baseurl }}/tag/{{tag | slugify}}/">{{tag}}</a>
+              {% endfor %}
+            </small>
+          </span>
+        </span>
+      </li>
+      {% endfor %}
+
+      <!-- {-{ post | tags }-} broken -->
+      <!-- {-{ site | tag_cloud }-} broken -->
+    </ul>
+  </article>
+</main>

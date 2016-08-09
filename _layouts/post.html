@@ -20,8 +20,16 @@ layout: default
 
       <section class="mdl-color-text--grey-700 mdl-card__supporting-text fdt__post__content" itemprop="articleBody">
         {{ content }}
-      </section>
 
+        <p class="fdt__post__tags">
+          Tags:
+          <small>
+            {% for tag in page.tags %}
+              <a href="{{ site.baseurl }}/tag/{{tag | slugify}}/">{{tag}}</a>
+            {% endfor %}
+          </small>
+        </p>
+      </section>
 
       {% if page.comments %}
         <section class="mdl-color-text--primary-contrast mdl-card__supporting-text fdt__post__comments">
@@ -47,7 +55,7 @@ layout: default
       {% endif %}
     </section>
 
-    <section class="mdl-card mdl-card--collapse mdl-card__supporting-text mdl-shadow--4dp fdt__post__inner fdt__post__recommended ">
+    <section class="mdl-card mdl-card--collapse mdl-card__supporting-text mdl-shadow--4dp fdt__post__inner fdt__post__recommended">
       <!-- @todo more attractive recommendations -->
       <footer class="mdl-card__media">
         <nav class="pagination mdl-color-text--grey-50">
