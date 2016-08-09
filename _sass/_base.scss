@@ -253,6 +253,7 @@ body{
     display: flex;
     justify-content: center;
     width: 100%;
+    padding-top: 60px;
 
     .mdl-card{
       &__supporting-text{
@@ -451,6 +452,10 @@ body{
       padding: 0;
     }
 
+    .fdt__post__inner{
+      padding: 0 $gs/2;
+    }
+
     .mdl-list{
       padding: 0;
 
@@ -578,6 +583,11 @@ div.highlighter-rouge{
  */
 .mdl-grid {
   display: flex !important;
+  padding: 0;
+
+  @media (min-width: 840px){
+    padding: 0;
+  }
 }
 
 .social-btn {
