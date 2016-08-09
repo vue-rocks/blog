@@ -3,10 +3,10 @@ layout: post
 title:  "Getting started with Vue.js: AngularJS perspective"
 description: "Writing Vue.js applications after working with AngularJS will feel familiar. Vue won't pack as many goodies out of the box, but it will still give Angular a run for its money."
 date:   2015-05-14 15:14:03+02:00
-size: 12
 sizeDesktop: 12
-textColor: grey-50
-metaColor: grey-600
+cover: "assets/getting-started-with-vuejs-angularjs-perspective/vuejs-angularjs-getting-started.jpg"
+textColor: blue-grey-800
+metaColor: blue-grey-800
 comments: true
 author: dan
 ---

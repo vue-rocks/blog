@@ -4,7 +4,7 @@ title:  "How to manage multilingual website translations?"
 description: "Translations in different languages, files and formats have a tendency to become messy - outsourcing translation management to the cloud can be an easy way out."
 date:   2015-05-08 12:25:54+02:00
 size: 12
-sizeDesktop: 4
+sizeDesktop: 12
 textColor: grey-50
 metaColor: grey-600
 comments: true

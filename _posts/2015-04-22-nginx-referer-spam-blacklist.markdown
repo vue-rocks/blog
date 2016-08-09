@@ -4,7 +4,7 @@ title:  "Blacklist Referer Spam Bots with NGINX"
 description: "Seeing weird things in your analytics dashboard? Here's an easy approach for blacklisting Referer Spam Bots with NGINX."
 date:   2015-04-22 18:51:00+02:00
 size: 12
-sizeDesktop: 4
+sizeDesktop: 8
 textColor: grey-50
 metaColor: grey-600
 comments: true

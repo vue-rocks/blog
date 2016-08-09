@@ -8,7 +8,7 @@ layout: default
       <section class="blog__posts mdl-grid">
         {% for post in paginator.posts %}
         <a href="{{ post.url | prepend: site.baseurl }}" class="mdl-card mdl-cell mdl-cell--{{post.size}}-col mdl-cell mdl-cell--{{post.sizeDesktop}}-col-desktop">
-          <span class="mdl-card__media mdl-color-text--{{post.textColor}}"
+          <span class="mdl-card__media mdl-color-text--{{post.textColor}} {% if post.cover %} mdl-card__media--cover {% endif %}"
           {% if post.cover %} style="background-image: url('{{site.baseurl}}/{{post.cover}}');" {% endif %}>
             <h3>{{post.title}}</h3>
           </span>

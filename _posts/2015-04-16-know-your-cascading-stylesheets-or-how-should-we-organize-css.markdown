@@ -4,7 +4,7 @@ title:  "Know your cascading stylesheets OR how should we organize CSS?"
 description: "How can we create maintainable, reusable, comprehensible CSS? Is there a formula that works for everybody, or is it just a matter of personal preference?"
 date:   2015-04-16 14:10:00+02:00
 size: 12
-sizeDesktop: 4
+sizeDesktop: 12
 textColor: grey-50
 metaColor: grey-600
 comments: true
