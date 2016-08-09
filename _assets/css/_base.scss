@@ -29,9 +29,13 @@ body{
 
   &.mdl-layout {
     .mdl-layout__content {
-      padding-top: 60px;
       position: relative;
       -webkit-overflow-scrolling: touch;
+      padding-top: $gs*2;
+
+      @media only screen and (min-width: $bp_xl){
+        padding-top: $gs*4;
+      }
     }
   }
 
@@ -228,6 +232,25 @@ body{
     width: 100%;
     flex-wrap: wrap;
 
+    @media only screen and (max-width: $bp_sm + 1){
+      flex-wrap: nowrap;
+
+      .mdl-layout-title{
+        transform: scale(0.7);
+        margin-left: -28px;
+      }
+
+      nav.mdl-navigation{
+        margin-left: auto;
+        margin-top: $gs;
+
+        a{
+          font-size: 0.9em;
+          padding: 0 8px;
+        }
+      }
+    }
+
     .mdl-navigation{
       margin-left:auto;
       position:relative;
@@ -252,6 +275,19 @@ body{
     .mdl-mega-footer__link-list{
       width:100%;
       display:flex;
+
+      @media only screen and (max-width: $bp_sm + 1){
+        flex-wrap: wrap;
+
+        .mdl-logo{
+          width: 100%;
+        }
+
+        .fdt__footer__made{
+          margin-left: 0;
+          width: 100%;
+        }
+      }
     }
 
     &__made{
@@ -263,12 +299,20 @@ body{
     display: flex;
     justify-content: center;
     width: 100%;
-    padding-top: 60px;
+    padding-top: $gs*2;
+
+    @media only screen and (min-width: $bp_xl){
+      padding-top: $gs*4;
+    }
 
     .mdl-card{
       &__supporting-text{
         width:100%;
-        padding: $gs*2;
+        padding: $gs;
+
+        @media only screen and (min-width: $bp_xxl){
+          padding: $gs*2;
+        }
       }
 
       &__media{
@@ -476,6 +520,10 @@ body{
       &__item{
         padding: 0;
         margin-bottom: $gs*3;
+
+        &.mdl-list__item--three-line{
+          height: auto;
+        }
       }
 
       &__item-primary-content{

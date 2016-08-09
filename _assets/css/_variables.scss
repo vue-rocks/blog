@@ -31,3 +31,11 @@ $color-accent: red($fdt), green($fdt), blue($fdt);
 $color-primary-contrast: red($g2), green($g2), blue($g2);
 $color-accent-contrast: red($w), green($w), blue($w);
 
+//Breakpoints
+$bp_sm: 480px;
+$bp_md: 600px;
+$bp_lg: 840px;
+$bp_xl: 960px;
+$bp_xxl: 1280px;
+$bp_3xl: 1440px;
+$bp_4xl: 1600px;

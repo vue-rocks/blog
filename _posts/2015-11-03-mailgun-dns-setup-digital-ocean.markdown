@@ -3,7 +3,6 @@ layout: post
 title:  "Digital Ocean DNS setup for Mailgun"
 description: "Making Digital Ocean and Mailgun play nice"
 date:   2015-11-03 11:22:30+01:00
-size: 12
 sizeDesktop: 8
 textColor: grey-50
 metaColor: grey-600
