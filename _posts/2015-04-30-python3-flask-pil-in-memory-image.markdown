@@ -9,6 +9,7 @@ textColor: grey-50
 metaColor: grey-600
 comments: true
 author: sander
+tags: [python, flask, back-end]
 ---
 
 In this post, we are going to implement a simple image placeholder service like [placehold.it][placeholdit]. Use-cases for disposable images extend beyond placeholder services, commonly used to encode text into an image in order to protect websites from being scraped for valuable information.

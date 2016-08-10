@@ -9,6 +9,7 @@ textColor: grey-50
 metaColor: grey-600
 comments: true
 author: dan
+tags: [html, css, email, responsive-email, front-end]
 ---
 
 ## TL;DR

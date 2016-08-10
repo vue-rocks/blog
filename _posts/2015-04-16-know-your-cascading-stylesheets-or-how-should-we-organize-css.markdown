@@ -9,6 +9,7 @@ textColor: grey-50
 metaColor: grey-600
 comments: true
 author: dan
+tags: [CSS, stylesheet, pre-processor, SASS, LESS, BEM, front-end]
 ---
 
 Here's my experience: every time I start a new project I feel like re-thinking my CSS strategy. I never felt satisfied with the quality of the stylesheets at the end of a project.

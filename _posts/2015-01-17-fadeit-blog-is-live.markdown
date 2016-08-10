@@ -9,6 +9,7 @@ textColor: grey-50
 metaColor: grey-600
 comments: true
 author: fadeit
+tags: [blog]
 ---
 
 Many of the projects we do at fadeit bring specific problems to the table. Sometimes to find a solution we need to 'learn by suffering', other times things go very smooth. We think that in both cases the experience gained is what really matters.

@@ -9,6 +9,7 @@ textColor: grey-50
 metaColor: grey-600
 comments: true
 author: justas
+tags: [nginx, spam, google-analytics]
 ---
 
 ## Some Background

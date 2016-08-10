@@ -9,6 +9,7 @@ textColor: grey-50
 metaColor: grey-600
 comments: true
 author: sander
+tags: [angular, angular-translate, ui-router, javascript, i18n, seo, front-end]
 ---
 
 **Update**: I have written a follow-up post solving the same problem using ui-router [here][update-post]

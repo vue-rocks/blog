@@ -8,6 +8,7 @@ textColor: grey-50
 metaColor: grey-600
 comments: true
 author: sander
+tags: [mailgun, dns, digital-ocean]
 ---
 
 When setting up Mailgun (MG) & Digital Ocean (DO) I ran into unexpected complications. Unfortunately DNS configuration feedback l<font size="4" style="position:relative; top:2px;">&infin;</font>p takes long time (as DNS settings propagate), so it ended taking me some days just to try couple configurations. There are some misleading tutorials out there as-well, so hopefully I can clear it once for all.

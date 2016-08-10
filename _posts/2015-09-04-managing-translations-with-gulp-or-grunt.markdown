@@ -9,6 +9,7 @@ textColor: grey-50
 metaColor: grey-600
 comments: true
 author: sander
+tags: [angular, gulp, grunt, python, i18n, google-sheets, javascript, front-end]
 ---
 
 ## Introduction

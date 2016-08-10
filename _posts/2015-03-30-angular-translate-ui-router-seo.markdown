@@ -9,12 +9,12 @@ textColor: grey-50
 metaColor: grey-600
 comments: true
 author: sander
-tags: [angular]
+tags: [angular, angular-translate, ui-router, i18n, seo, javascript, front-end]
 ---
 
 ## Introduction
 
-In [previous][prev-post] post we explored how to introduce unique URLs per language using primarily NGINX and Grunt configuration. To recap, that approach is reasonable if you already have a working application and prefer not to re-factor every state and view that links to it. While it may be easier to implement in an existing application, it forces users to perform a refresh when switching between languages - though not a big issue (how often do users switch back-and-forth anyway), having a Single Page Application (SPA) that forces users to reload pages is sub-optimal. In this article we will explore possibilities of implementing SEO friendly URLs using ui-router.
+In a [previous][prev-post] post we explored how to introduce unique URLs per language using primarily NGINX and Grunt configuration. To recap, that approach is reasonable if you already have a working application and prefer not to re-factor every state and view that links to it. While it may be easier to implement in an existing application, it forces users to perform a refresh when switching between languages - though not a big issue (how often do users switch back-and-forth anyway), having a Single Page Application (SPA) that forces users to reload pages is sub-optimal. In this article we will explore possibilities of implementing SEO friendly URLs using ui-router.
 
 Nested states is the key to introducing language as a URL variable to all states. We start off by creating the 'app' state that every other state will be child of. The app state is abstract, so that the state by itself can not be activated. Next we want the route to only match the languages we intend to support (in this example 'da' and 'en') to reduce possible false-positive matches e.g example.com/<b>da</b>ta. As ui-router injects the content of the child states into ui-view, we define it as an inline template for the parent route. We also define 'app.home' state that will handle example.com/en and example.com/da pages:
 

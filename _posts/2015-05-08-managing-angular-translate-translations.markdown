@@ -9,6 +9,7 @@ textColor: grey-50
 metaColor: grey-600
 comments: true
 author: sander
+tags: [angular, angular-translate, i18n, google-sheets, javascript, front-end]
 ---
 
 **Update**: I have written a [follow-up post][follow-up] where I load translations during gulp/grunt build process instead of nginx proxy.

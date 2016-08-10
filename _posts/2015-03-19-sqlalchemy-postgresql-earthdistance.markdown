@@ -9,6 +9,7 @@ textColor: grey-50
 metaColor: grey-600
 comments: true
 author: sander
+tags: [sqlalchemy, postgresql, back-end]
 ---
 
 The fact that Earth is round, but not a sphere makes calculating distances difficult. Fortunately PostgreSQL has an extension for just doing that - earthdistance. Doing the calculations in the database is superior as extensions are compiled and it enables us to build an index to reduce the amount of calculations needed to make at query time. I came across [this][postgres-radius] article to get me started, however considering I spent more time on making earthdistance work with SQLAlchemy, I decided to share my solution. The example below assumes that you already have earthdistance set up and working with a ORM model class 'Company' that has 'lat' and 'lng' fields present.

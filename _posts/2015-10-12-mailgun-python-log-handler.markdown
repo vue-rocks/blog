@@ -9,6 +9,7 @@ textColor: grey-50
 metaColor: grey-600
 comments: true
 author: sander
+tags: [mailgun, python, flask, log, back-end]
 ---
 
 Yet another reason to love python is the wonderful logging API provided by a standard library. Having a decent logger provided by the language saves developers time from integrating with some third-party library, but most importantly it contributes to a clean system where all modules use the same logger. Out of the box, there is a [handler][logging] for almost any typical use-case, but the best feature is the option to create your own with relative ease. So-far we've been using [SMTPHandler][smtp-handler], but since moving to [Mailgun][mailgun], I decided to experiment with a custom handler to submit logs via their API instead. I'd like to mention that creating a custom logging handler is not a requirement, it is still possible to use their SMTP server with SMTP handler. To get started, we need to extend Handler baseclass and override emit method to make a POST request.

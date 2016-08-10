@@ -9,6 +9,7 @@ textColor: grey-50
 metaColor: grey-600
 comments: true
 author: justas
+tags: [open-data, odaa]
 ---
 
 Among other things, Aarhus is famous for it’s vibrant maker community. We have things like [Open Space Aarhus][osaa], [Internet Week Denmark][iwd], [GOTO conference][goto] and more. This weekend, [City of Smiles][aarhus] is hosting yet another maker event - [Aarhus Mini Maker Faire][mini-maker-faire]. While the original Maker Fair of San Matteo, California is celebrating its 10 year anniversary this year, our city is relatively new to this, having started in 2014. Regardless, the first event was a huge success and we want more!

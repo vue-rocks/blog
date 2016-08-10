@@ -9,6 +9,7 @@ textColor: grey-50
 metaColor: grey-600
 comments: true
 author: justas
+tags: [couchdb, mock-couch, express, javascript, node.js, javascript, back-end]
 ---
 
 ## Prerequisites
