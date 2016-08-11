@@ -49,7 +49,7 @@ if ($invalid_referer) {
 
 This works, but what if we want to maintain a larger blacklist of referers? Our `valid_referers` directive would get crazy long. If that's fine with you, you can stop reading here. It sure isn't fine with me :).
 
-In order to make our blacklist more maintainable, we can use [ngx\_http\_map\_module][map_mod]. Let's save `/etc/nginx/blacklist.conf` file with the following content:
+In order to make our blacklist more maintainable, we can use [ngx\_http\_map\_module][map-mod]. Let's save `/etc/nginx/blacklist.conf` file with the following content:
 
 
 ```bash
