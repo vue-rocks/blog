@@ -39,12 +39,14 @@ module Jekyll
       # Read the YAML data from the layout page.
       self.read_yaml(File.join(base, '_layouts'), 'author_index.html')
       self.data['author']    = author
+      current = site.config['authors'][author]
+
       # Set the title for this page.
-      title_prefix             = site.config['author_title_prefix'] || 'author: '
-      self.data['title']       = "#{title_prefix}#{author}"
+      title_prefix             = site.config['author_title_prefix'] || 'Articles by '
+      self.data['title']       = "#{title_prefix}#{current['display_name']}"
       # Set the meta-description for this page.
-      meta_description_prefix  = site.config['author_meta_description_prefix'] || 'author: '
-      self.data['description'] = "#{meta_description_prefix}#{author}"
+      meta_description_prefix  = site.config['author_meta_description_prefix'] || 'Articles written by: '
+      self.data['description'] = "#{meta_description_prefix}#{current['display_name']}, #{current['title']} at fadeit"
     end
 
   end
@@ -73,7 +75,7 @@ module Jekyll
 
       if Jekyll::VERSION < '3.0.0'
         post_docs = self.posts
-      else 
+      else
         post_docs = self.posts.docs
       end
 
