@@ -43,7 +43,7 @@ module Jekyll
 
       # Set the title for this page.
       title_prefix             = site.config['author_title_prefix'] || 'Articles by '
-      self.data['title']       = "#{title_prefix}#{current['display_name']}"
+      self.data['title']       = "#{title_prefix}<b>#{current['display_name']}</b>"
       # Set the meta-description for this page.
       meta_description_prefix  = site.config['author_meta_description_prefix'] || 'Articles written by: '
       self.data['description'] = "#{meta_description_prefix}#{current['display_name']}, #{current['title']} at fadeit"

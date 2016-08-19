@@ -10,10 +10,12 @@ layout: default
       </header>
 
       <section class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
-        <div class="minilogo" style="background-image: url(https://s.gravatar.com/avatar/{{site.authors[page.author].gravatar}});"></div>
+        <a href="{{ site.baseurl }}/authors/{{ page.author }}" class="minilogo" style="background-image: url(https://s.gravatar.com/avatar/{{site.authors[page.author].gravatar}});"></a>
 
         <div>
-          <strong class="author">{{ site.authors[page.author].display_name }}</strong>
+          <a href="{{ site.baseurl }}/authors/{{ page.author }}">
+            <strong class="author">{{ site.authors[page.author].display_name }}</strong>
+          </a>
           <time datetime="{{ page.date | date_to_xmlschema }}" class="date">{{ page.date | date: "%b %-d, %Y" }}</time>
         </div>
       </section>

@@ -176,10 +176,23 @@ body{
     border: 2px solid rgb(243, 243, 243);
     border-radius: 50%;
     background-color: #F5F5F5;
+    transition: opacity $time $ease;
+
+    &:hover, &:focus{
+      opacity: 0.8;
+      transition: opacity $time $ease;
+    }
   }
 
   .author{
     color: $g1;
+    text-decoration: none;
+    transition: opacity $time $ease;
+
+    &:hover, &:focus{
+      opacity: 0.8;
+      transition: opacity $time $ease;
+    }
   }
 
   .date{
@@ -505,6 +518,12 @@ body{
     }
   }
 
+  &__page{
+    &__inner{
+      padding: 0 $gs/2;
+    }
+  }
+
   &__tag-feed{
     h3{
       padding: 0;
@@ -546,6 +565,18 @@ body{
       a{
         text-decoration: none;
         margin-right: $gs/2;
+      }
+    }
+  }
+
+  &__content{
+    .fdt__post{
+      &:first-child{
+        padding-top: 0;
+      }
+
+      &__inner{
+        padding: 0;
       }
     }
   }
