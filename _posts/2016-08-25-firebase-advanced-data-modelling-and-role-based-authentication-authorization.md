@@ -75,11 +75,11 @@ Once more, I might be omitting some details here and there. Here are the main ro
 - Manager
     
     * **Projects**, **Tasks**, **Files**: Create, Read, Update, Delete 
+    * **Files** Create, Read, Update, Delete 
     * **Messages**: Create, Read, Update, Delete 
-    * **Messages**: Read 
     * **Tasks**: Create, Read, Update, Delete 
     * **Users**: Create, Read
-    * **Self** Read, Update, Delete (Users -> $ownUid)
+    * **Self** Read, Update, Delete (users/{$ownUid})
 
 
 - User 
@@ -89,16 +89,16 @@ Once more, I might be omitting some details here and there. Here are the main ro
     * **Messages** Read 
     * **Own Messages** Create, Update, Delete 
     * **Tasks** Read, Update 
-    * **Self** Read, Update, Delete (Users -> $ownUid)
+    * **Self** Read, Update, Delete (users/{$ownUid})
 
 
 - External users / collaborators
 
-    * **Own Projects** Read (projects that she is part of)
-    * **Own Tasks** Read 
+    * **Some Projects** Read
+    * **Some Tasks** Read 
     * **Files** Create, Read 
     * **Own Files** Update, Delete 
-    * **Self** Read, Update, Delete (Users -> $ownUid)
+    * **Self** Read, Update, Delete (users/{$ownUid})
 
 
 ## General approach
@@ -113,7 +113,7 @@ As you can see, it's quite messy. Expressing this with conditionals (i.e. `if(us
 I'd like to avoid all this so I ditched the idea quickly. In fact, I can't see how this approach would work with most tools / systems, not only with Firebase, but that's another story. <br/>
 What I do want to go for instead is an activity-based authorization system. 
 
-Here's how it works: By default no user has any permission. Then, I create a new entity in my real-time database, called **Permissions** to override this. The entity will be keyed by role name and hold all permissions for a certain role. Example: <br/>
+Here's how that'll work: By default no user has any permission. Then, I create a new entity in my real-time database, called **Permissions** where I can define roles (that give certain permissions). I'll key by role name and write all permissions for a certain role. Example: <br/>
 
 ```javascript
 Permissions: {
@@ -128,7 +128,7 @@ Permissions: {
     },
     /* 
      * ... 
-     * skipped some entities because messages are interesting
+     * skipped some entities because 'messages' are more interesting
      * ...
      */
     messages: {
@@ -148,9 +148,11 @@ Permissions: {
 }
 ```
 
-A small note here, my permissions mirror CRUD, but they can be anything really. I've also chose to group them in 'own' & 'other' for readability, but it might as well be `canReadOwn` or `canReadOther`. For my use case the above example works, but you might choose to have more fine-grained control in yours (more on that a bit later).
+A small note here, my permissions mirror CRUD, but they can be anything really. I also grouped them in 'own' & 'other' for readability, but it might as well be `canReadOwn` or `canReadOther`. For my use case the above is good enough, but you might choose to have more fine-grained control in yours.
 
-The way this will work is that upon creation, users are assigned a role. It's important to note that only admins can add users to my app (there's no open registration). Because I don't want to use a back-end, there's an immediate problem with this: there's no way to restrict Firebase registration through the console. With some nifty scripts people could create an account for themselves, but the joke's on them. Firstly, I make sure a `changeRole` permission exists for writing to `/users/$uid/role`, which only admins have. Secondly, if there's no `/users/$uid/role` set, I restrict all read & write access. That should keep them pesky malicious users from messing with the database. 
+The way this will work is that upon creation, users are assigned a role. It's important to note that only admins can add users to this app (there's no open registration... kind of). Because I don't want to use a back-end, there's an immediate problem with this: there's actually no way to restrict Firebase registration through the console. With some nifty scripts clever people could create an account for themselves, but the joke's on them. <br/>
+Firstly, I'll make sure a `changeRole` permission exists for writing to `/users/$uid/role`, which only admins have (they'll have permission to do everything, including this). <br/>
+Secondly, if there's no `/users/$uid/role` set, I restrict all read & write access. That should keep those pesky clever users from messing with my database. 
 
 Now that's fine and dandy, but how to actually implement this?<br/>
 Don't worry friend, we got this.
@@ -159,13 +161,13 @@ Don't worry friend, we got this.
 ## Bolt FTW
 If you didn't come across it yet, [Firebase Bolt](https://github.com/firebase/bolt) is a compiler for Firebase rules (it might be illegal, but could we call it a Firebase rules transpiler?!). It's supposedly experimental, so make sure to double-check the output after compiling (unit test!).
 
-Now, even with Bolt, I've noticed I'd be in trouble already. I want to have CRUD rules, but Firebase only understands Read / Write rules. How to do restrict deletion then? <br/>
+Now, even with Bolt, I've noticed I'd be in trouble already. I want to have CRUD-like rules, but Firebase only knows about Read / Write. How to restrict deletion then? <br/>
 I had to choose between (I believe) two options:
 
 + **A.** build objects such that they have `{ public: {/* what I have so far */ }, private: { deleted: Boolean } }` paths & add a field named 'deleted' on `private`, for which I add stricter write rules, i.e. only admins will have permissions to write (NB: this way data will never actually be deleted). Then, I'd tweak the rules to prevent access for items with `private.deleted === true` 
-+ **B.** use `newData.exists()` together with my permissions, which will can prevent deletion for users that are not authorized to delete
++ **B.** use `newData.exists()` together with my permissions, which will prevent deletion for users that are not authorized to delete
 
-I choose to go with **B.**, but some systems go with **A.**: that way data can be restored later if needed. After I'll deploy the first version of the app, the only way to change my decision is via (probably) a complicated migration script.
+I went with **B.**, but some might find **A.** to be suitable: that way data can be restored later if needed. After I'll deploy the first version of the app, the only way to change my decision is via (probably) a complicated migration script.
 
 I'll have a similar issue with 'create'. There's no create rule in Firebase, but there are ways to make that work too.<br/>
 Long story short, Bolt supports splitting the `write` rule into `create`, `update`, `delete` ([see here](https://github.com/firebase/bolt/blob/master/docs/language.md#write-aliases)). It's a matter of preference in the end, but I'll stick with it for the sake of simplicity. You can achieve the same in a more explicit manner.
@@ -229,13 +231,13 @@ path /projects/{$uid}/owner { /* Users can only write to their own 'owner' field
 
 /*
  * ...
- * Checks for other entities omitted; they would look similar.
+ * Other entities omitted; they would look similar.
  * Each entity with an owner will have a `/owner` rule. 
  * That prohibits anybody from changing it, like we have for `/projects/{$uid}/owner`
  *//
 ```
 
-That's about it. It compiles via Bolt, so it should work... maybe with some tweaks here & there. With proper unit tests, this baby should be able to handle whatever you throw at it.
+That's about it. It compiles via Bolt, so it should work... maybe with some tweaks here & there. With proper unit tests, this baby's gonna be able to handle whatever you throw at it.
 
 To give one more example, here's how the admin role would look:
 
