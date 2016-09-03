@@ -49,15 +49,15 @@ if ($invalid_referer) {
 
 This works, but what if we want to maintain a larger blacklist of referers? Our `valid_referers` directive would get crazy long. If that's fine with you, you can stop reading here. It sure isn't fine with me :).
 
-In order to make our blacklist more maintainable, we can use [ngx\_http\_map\_module][map-mod]. Let's save `/etc/nginx/blacklist.conf` file with the following content:
+In order to make our blacklist more maintainable, we can use [ngx\_http\_map\_module][map-mod]. Let's save `/etc/nginx/conf.d/blacklist.conf` file with the following content:
 
 
 ```bash
-# /etc/nginx/blacklist.conf
- 
+# /etc/nginx/conf.d/blacklist.conf
+
 map $http_referer $bad_referer {
     hostnames;
- 
+
     default                           0;
 
     # Put regexes for undesired referers here
@@ -89,35 +89,20 @@ map $http_referer $bad_referer {
 }
 ```
 
-Now include the file in the the http block of your `/etc/nginx/nginx.conf` file:
 
-
-```bash
-# /etc/nginx/nginx.conf
- 
-http {
-# ...
- 
-  include blacklist.conf;
- 
-# ...
- 
-}
-```
-
-All that's left is to add conditions to the sites, for which, you want to block referer spam bots:
+Now add conditions to the sites, for which you want to block referer spam bots:
 
 
 ```bash
 # /etc/nginx/sites-enabled/mysite.conf
- 
+
 server {
   # ...
- 
-  if ($bad_referer) { 
-    return 444; 
-  } 
- 
+
+  if ($bad_referer) {
+    return 444;
+  }
+
   # ...
 }
 ```
