@@ -9,7 +9,7 @@ textColor: blue-grey-800
 metaColor: blue-grey-800
 comments: true
 author: dan
-tags: [vue.js, angular, javascript, front-end]
+tags: [vuejs, angular, javascript, front-end]
 ---
 
 ## Background

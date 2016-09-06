@@ -9,7 +9,7 @@ textColor: grey-50
 metaColor: grey-600
 comments: true
 author: sander
-tags: [angular, socket.io, javascript, front-end]
+tags: [angular, socketio, javascript, front-end]
 ---
 
 [Socket.io][socketio] has truly been a godsend to making realtime applicaions. What used to require writing complex code, ajax polling and other tricks of the trade is now a few lines of code. And it's fast too - in fact we have a situation where client sends a POST request to python server, which in turn is passed to node server via [redis][redis] [pub/sub][redis-pubsub] and that in turn send a message to the client with socket.io. The interesting bit is that although the socket.io round-trip involves more components, it delivers the message back to client before the response is received. While pure HTTP implementation with network latency in the mix might win the race, it is still a valid contender.
