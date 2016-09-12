@@ -9,7 +9,7 @@ textColor: grey-50
 metaColor: grey-600
 comments: true
 author: justas
-tags: [socket.io, javascript, back-end]
+tags: [socketio, javascript, back-end]
 ---
 
 A while ago I implemented a chat server based on [Socket.IO][socketio] for [hopper.dk][hopper]. In addition to the chat server, the system already had 2 HTTP servers: [Gunicorn][gunicorn] for our RESTful API and [NGINX][nginx] for serving [AngularJS][angular] frontend. To make SSL management easier I decided to put all 3 servers behind a single NGINX host. It all went pretty smoothly except for 1 thing- my chat server with a custom namespace was unreachable through NGINX.

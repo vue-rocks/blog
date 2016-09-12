@@ -4,8 +4,8 @@ layout: nil
 <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
  <title>{{ page.title }} - {{ page.tag }}</title>
- <link href="http://example.com{{ page.url }}" rel="self"/>
- <link href="http://example.com/tag/{{ page.tag }}.html"/>
+ <link href="{{site.url}}{{site.baseurl}}{{ page.url }}" rel="self"/>
+ <link href="{{site.url}}{{site.baseurl}}/tag/{{ page.tag }}/"/>
  <updated>{{ site.time | date_to_xmlschema }}</updated>
  <id>{{site.url}}{{site.baseurl}}/tag/{{ page.tag }}.html</id>
  <author>
@@ -14,7 +14,7 @@ layout: nil
  {% for post in page.posts %}
  <entry>
    <title>{{ post.title }}</title>
-   <link href="http://example.com{{ post.url }}"/>
+   <link href="{{site.url}}{{site.baseurl}}{{ post.url }}"/>
    <updated>{{ post.date | date_to_xmlschema }}</updated>
    <id>{{site.url}}{{site.baseurl}} {{ post.id }}</id>
    <content type="html">{{ post.content | xml_escape }}</content>
