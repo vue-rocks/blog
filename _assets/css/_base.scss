@@ -641,9 +641,13 @@ div.highlighter-rouge{
   }
 
   .highlight{
-    margin: 0 #{-$gs};
+    margin: 0 #{-$gs/2};
     width: calc(100% + #{$gs*2 - 1});
     padding: $gs/4 $gs/4 $gs/2 $gs/4;
+
+    @media only screen and (min-width: $bp_xxl){
+      margin: 0 #{-$gs};
+    }
 
     pre{
       margin: 0;

@@ -312,7 +312,6 @@ One approach for writing services is to use a `HTTP` -> `Service` -> `Component`
   <tbody>
     <tr>
       <td style="width: 50%;">
-        <b class="title">Angular interpolation</b>
 {% highlight coffeescript %}
 class HTTP
   constructor: () -> ...
@@ -323,7 +322,6 @@ class HTTP
 {% endhighlight %}
       </td>
       <td style="width: 50%;">
-        <b class="title">Vue interpolation</b>
 {% highlight javascript %}
 HTTP = (function() {
   HTTP.prototype.get = function() {...};
@@ -354,11 +352,94 @@ reqwest({
 
 With CoffeeScript we can extend the HTTP class to adapt it for other use cases. For example, the User object could look like: <br/> (Remember: Angular already has the $http service, so we don't have to do any of these bits)
 
-{'header': {'1': {'text': 'JavaScript', 'size': '12'}, '0': {'text': 'CoffeeScript', 'size': '12'}}, 'rows': {'0': {'columns': {'1': {'content': {'0': {'file': 'user-http.js.txt', 'language': 'javascript', 'type': 'code'}}, 'size': '12'}, '0': {'content': {'0': {'file': 'user-http.coffee.txt', 'language': 'coffeescript', 'type': 'code'}}, 'size': '12'}}}}, 'type': 'fake-table', 'largeCode': True}
+<table class="fdt-table">
+  <thead>
+    <tr>
+      <th>CoffeeScript</th>
+      <th>JavaScript</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="width: 50%;">
+{% highlight coffeescript %}
+class UserHTTP extends HTTP
+  all: () -> @get("/v1/users")
+  remove: (id) -> @delete(“#{/v1/users/#{id}”)
+  #...
+{% endhighlight %}
+      </td>
+      <td style="width: 50%;">
+{% highlight javascript %}
+UserHTTP = (function(superClass) {
+  extend(UserHTTP, superClass);
+
+  function UserHTTP() {
+    return UserHTTP.__super__.constructor.apply(this, arguments);
+  }
+
+  UserHTTP.prototype.all = function() {
+    return this.get("/v1/users");
+  };
+
+  UserHTTP.prototype.remove = function(id) {
+    return this.get(“/v1/users/“ + id);
+  };
+
+  //...
+
+  return UserHTTP;
+})(HTTP);
+{% endhighlight %}
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 Then come the actual services, which are perhaps closer to what we’re used to in Angular. For the same Object, we need to pass UserHTTP as a constructor param and then we’ll be able to call its methods and process the data as needed (before or after requests are sent).
 
-{'header': {'1': {'text': 'JavaScript', 'size': '12'}, '0': {'text': 'CoffeeScript', 'size': '12'}}, 'rows': {'0': {'columns': {'1': {'content': {'0': {'file': 'user-service.js.txt', 'language': 'javascript', 'type': 'code'}}, 'size': '12'}, '0': {'content': {'0': {'file': 'user-service.coffee.txt', 'language': 'coffeescript', 'type': 'code'}}, 'size': '12'}}}}, 'type': 'fake-table', 'largeCode': True}
+<table class="fdt-table">
+  <thead>
+    <tr>
+      <th>CoffeeScript</th>
+      <th>JavaScript</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td style="width: 50%;">
+{% highlight coffeescript %}
+class UserService
+  constructor: (@HTTP) ->
+  all: () -> @HTTP.all()
+  remove: (id) ->
+     # Here we can do some data processing
+     # ...
+     @HTTP.remove(id)
+{% endhighlight %}
+      </td>
+      <td style="width: 50%;">
+{% highlight javascript %}
+UserService = (function() {
+  function UserService(HTTP) {
+    this.HTTP = HTTP;
+  }
+
+  UserService.prototype.all = function() {...};
+
+  UserService.prototype.remove = function(id) {
+    //Here we can do some data processing
+    //...
+    return this.HTTP.remove(id);
+  };
+
+  return UserService;
+})();
+{% endhighlight %}
+      </td>
+    </tr>
+  </tbody>
+</table>
 
 Finally, in any component we can instantiate a service and call the methods that in turn will make an HTTP request.
 
@@ -394,7 +475,7 @@ Before you check out the diagram below, it is worth mentioning that Browserify w
 
 ![Diagram: one way to structure larger Vue.js apps.][diagram-img]
 
-In terms of file/directory structure, here’s how it looked:
+In terms of file/directory structure, here’s how a Vue app could look like:
 
 (get a full copy [here][dir-img])
 
