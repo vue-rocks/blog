@@ -1,12 +1,12 @@
 ---
 layout: default
 ---
-<main class="blog fdt__post" itemscope itemtype="http://schema.org/BlogPosting">
+<main class="blog fdt__post">
   <article class="mdl-grid fdt__post__inner">
     <section class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
       <header class="mdl-card__media mdl-color-text--grey-50">
         <p>{{ page.description }}</p>
-        <h3 itemprop="name headline">{{ page.title }}</h3>
+        <h3>{{ page.title }}</h3>
       </header>
 
       <section class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
@@ -20,7 +20,7 @@ layout: default
         </div>
       </section>
 
-      <section class="mdl-color-text--grey-700 mdl-card__supporting-text fdt__post__content" itemprop="articleBody">
+      <section class="mdl-color-text--grey-700 mdl-card__supporting-text fdt__post__content">
         {{ content }}
 
         <p class="fdt__post__tags">
