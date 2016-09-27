@@ -4,7 +4,7 @@ title:  "CSS backdrop filters"
 description: "The backdrop-filter will (hopefully) become mainstream in the near future. Here's why I am excited about it."
 date: 2016-09-27 15:22:00+01:00
 size: 12
-sizeDesktop: 6
+sizeDesktop: 4
 cover: "assets/backdrop-(filter)-it-like-its-hot/css-backdrop-filter-text-magic.gif"
 textColor: blue-grey-800
 metaColor: blue-grey-800

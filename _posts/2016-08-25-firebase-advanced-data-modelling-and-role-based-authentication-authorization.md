@@ -4,7 +4,7 @@ title:  "Firebase advanced data modelling and role based authorization"
 description: "Using Firebase for the first time, one might have questions about how to model data & do authorization. Here's my idea of how to do it (fingers crossed!)"
 date: 2016-08-25 15:10:30+01:00
 size: 12
-sizeDesktop: 6
+sizeDesktop: 8
 cover: "assets/firebase-advanced-data-modelling-and-role-based-authentication-authorization/firebase-data-modelling-and-auth.png"
 textColor: grey-50
 metaColor: grey-500

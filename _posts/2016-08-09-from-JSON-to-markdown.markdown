@@ -4,7 +4,7 @@ title:  "We've gone static (again)"
 description: "We went from JSON (Angular) to markdown (Jekyll). Is this going to boost our blogging adventures though?"
 date:   2016-08-09 08:22:30+01:00
 size: 12
-sizeDesktop: 4
+sizeDesktop: 6
 cover: "assets/from-JSON-to-markdown/cover.gif"
 textColor: grey-50
 metaColor: grey-600
