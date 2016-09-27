@@ -86,12 +86,12 @@ If you want to read more about it there's plenty of info in [this blog post](htt
 
 
 ## Why I don't care about the frost effect
-It's just a trend. It's going to disappear when the next trend comes out... use it with caution (damn, I should remove it from [mindrudan.com](http://mindrudan.com)).
+It's just a trend. It's going to disappear when the next trend comes out... use it with caution if you have to (damn, I should remove it from [mindrudan.com](http://mindrudan.com)).
 
 
 ## Wrap up
 Convincing browsers vendors to implement this experimental feature won't be easy.
-As we all know, the best way to do it is with a good song. Here goes:
+As we all know, the best way to do it is with a good song. Here it goes:
 
 <i>
 ...<br/>
