@@ -67,10 +67,24 @@ The full code for it is available below.
 
 <br/>
 Unless you are on **Safari 9+**, you'll see the inverted background (pink) and nothing else. <br/>
-Browser support [is limited](http://caniuse.com/#feat=css-backdrop-filter) at the moment.
+Browser support [is limited](http://caniuse.com/#feat=css-backdrop-filter) at the moment. <br/>
+**Update**: you can also make it work in the current Chrome build by enabling the `'Experimental Web Platform features Mac, Windows, Linux, Chrome OS, Android'` flag.
 
 But that's not all! Like `filter`, we can use a bunch of effects, such as `brightness`, `contrast`, `grayscale`, `hue-rotate` (awesome!), `saturate` and more. <br/>
 So many possibilities, so little time! What will you build?
+
+
+## Cool stuff you can do with it (suggested by the community, yay!)
+Got a cool use case for backdrop-filter? Drop us a line and we'll include it here!
+
+#### Night mode
+
+<span style="text-align: center; width: 100%; display: inline-block; background-color: whitesmoke;">
+![Night mode][night-mode]
+</span>
+
+Proof of concept: [yes sir!](https://codepen.io/danmindru/pen/rrwpow) <br/>
+Thanks for the suggestion [@bkinney](https://disqus.com/by/bkinney/)
 
 
 ## Why does it exist
@@ -108,3 +122,4 @@ And I roll the best stylesheet cause I got it going on<br/>
 
 [apple-image]: {{ site.baseurl }}/assets/backdrop-(filter)-it-like-its-hot/css-backdrop-filter-apple.png
 [backdrop-image]: {{ site.baseurl }}/assets/backdrop-(filter)-it-like-its-hot/css-backdrop-trick.gif
+[night-mode]: {{ site.baseurl }}/assets/backdrop-(filter)-it-like-its-hot/backdrop-filter-css-night-mode.gif
