@@ -83,8 +83,18 @@ Got a cool use case for backdrop-filter? Drop us a line and we'll include it her
 ![Night mode][night-mode]
 </span>
 
+
 Proof of concept: [yes sir!](https://codepen.io/danmindru/pen/rrwpow) <br/>
 Thanks for the suggestion [@bkinney](https://disqus.com/by/bkinney/)
+
+
+#### Frosted glass effect
+<span style="text-align: center; width: 100%; display: inline-block; background-color: whitesmoke;">
+![Frosted glass effect][frosted-mode]
+</span>
+
+Proof of concept: [sure!](https://codepen.io/danmindru/pen/vXJNgg) <br/>
+(Due to popular demand)
 
 
 ## Why does it exist
@@ -120,6 +130,7 @@ And I roll the best stylesheet cause I got it going on<br/>
 <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 <script async src="//assets.codepen.io/assets/embed/ei.js"></script>
 
-[apple-image]: {{ site.baseurl }}/assets/backdrop-(filter)-it-like-its-hot/css-backdrop-filter-apple.png
+[apple-image]: {{ site.baseurl }}/assets/backdrop-(filter)-it-like-its-hot/css-backdrop-filter-apple.jpg
 [backdrop-image]: {{ site.baseurl }}/assets/backdrop-(filter)-it-like-its-hot/css-backdrop-trick.gif
 [night-mode]: {{ site.baseurl }}/assets/backdrop-(filter)-it-like-its-hot/backdrop-filter-css-night-mode.gif
+[frosted-mode]: {{ site.baseurl }}/assets/backdrop-(filter)-it-like-its-hot/backdrop-filter-apple-frost-effect.gif
