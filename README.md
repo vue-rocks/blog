@@ -1,4 +1,8 @@
-# fadeitdk-blog
+# Vue.rocks blog
+
+##⏳ Coming soon
+
+----------------------------------
 
 ##Install:
 ```bash
@@ -30,9 +34,6 @@ See defaults in _config.yml._
 
 ===================
 <br/>
-<a href="http:fadeit.dk"><img src="http://fadeit.dk/src/assets/img/brand/fadeit_logo_full.svg" alt="The fadeit logo" style="width:200px;"/></a><br/><br/>
-
-Made with ♥ by fadeit<br/>
-We build awesome software, web and mobile applications.
-See more at [fadeit.dk](http://fadeit.dk)
+Made with ♥ <br/>
+Check out the blog at [vue.rocks](https://vue.rocks)
 
