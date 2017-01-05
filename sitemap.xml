@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd" xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+<url>
+<loc>https://vue.rocks/2017/01/01/backdrop-(filter)-it-like-its-hot/</loc>
+<lastmod>2017-01-01T16:22:00+02:00</lastmod>
+</url>
+<url>
+<loc>https://vue.rocks/</loc>
+</url>
+<url>
+<loc>https://vue.rocks/authors/dan/</loc>
+</url>
+<url>
+<loc>https://vue.rocks/tag/vue/</loc>
+</url>
+<url>
+<loc>https://vue.rocks/tag_atom/vue/</loc>
+</url>
+<url>
+<loc>https://vue.rocks/tag/vuejs/</loc>
+</url>
+<url>
+<loc>https://vue.rocks/tag_atom/vuejs/</loc>
+</url>
+<url>
+<loc>https://vue.rocks/tag/vue.js/</loc>
+</url>
+<url>
+<loc>https://vue.rocks/tag_atom/vue.js/</loc>
+</url>
+<url>
+<loc>https://vue.rocks/tag/javascript/</loc>
+</url>
+<url>
+<loc>https://vue.rocks/tag_atom/javascript/</loc>
+</url>
+</urlset>

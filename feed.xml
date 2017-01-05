@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Vue.js rocks! Vue components, plugins, tutorials and more!</title>
+    <description>The Vue.js rocks blog is a great place to learn new things about Vue.js components, plugins, build tools and everything in between.
+</description>
+    <link>https://vue.rocks/</link>
+    <atom:link href="https://vue.rocks/feed.xml" rel="self" type="application/rss+xml"/>
+    <pubDate>Thu, 05 Jan 2017 23:19:47 +0200</pubDate>
+    <lastBuildDate>Thu, 05 Jan 2017 23:19:47 +0200</lastBuildDate>
+    <generator>Jekyll v3.2.1</generator>
+    
+      <item>
+        <title>Vue rocks (almost) live!</title>
+        <description>&lt;p&gt;Vue.rocks is shaping up. Meanwhile, you can see the source at &lt;a href=&quot;https://github.com/vue-rocks/blog&quot;&gt;github.com/vue-rocks/blog&lt;/a&gt;.&lt;/p&gt;
+</description>
+        <pubDate>Sun, 01 Jan 2017 16:22:00 +0200</pubDate>
+        <link>https://vue.rocks/2017/01/01/backdrop-(filter)-it-like-its-hot/</link>
+        <guid isPermaLink="true">https://vue.rocks/2017/01/01/backdrop-(filter)-it-like-its-hot/</guid>
+        
+        <category>vue</category>
+        
+        <category>vuejs</category>
+        
+        <category>vue.js</category>
+        
+        <category>javascript</category>
+        
+        
+      </item>
+    
+  </channel>
+</rss>

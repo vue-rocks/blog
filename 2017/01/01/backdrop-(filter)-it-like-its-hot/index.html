@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html>
+
+  <head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  
+    <title>Vue rocks (almost) live!</title>
+  
+
+  <!-- Begin Jekyll SEO tag v2.0.0 -->
+<meta property="og:title" content="Vue rocks (almost) live!" />
+<meta name="description" content="Working on the Vue.rocks blog, stay tuned!" />
+<meta property="og:description" content="Working on the Vue.rocks blog, stay tuned!" />
+<link rel="canonical" href="https://vue.rocks/2017/01/01/backdrop-(filter)-it-like-its-hot/" />
+<meta property="og:url" content="https://vue.rocks/2017/01/01/backdrop-(filter)-it-like-its-hot/" />
+<meta property="og:site_name" content="Vue.js rocks! Vue components, plugins, tutorials and more!" />
+<meta property="og:image" content="https://cloud.githubusercontent.com/assets/1515742/21673828/83e96246-d333-11e6-8b05-561cbd757c4f.png" />
+<meta property="og:type" content="article" />
+<meta property="article:published_time" content="2017-01-01T16:22:00+02:00" />
+<script type="application/ld+json">
+  {
+    "@context": "http://schema.org",
+    "@type": "BlogPosting",
+    "headline": "Vue rocks (almost) live!",
+    "image": "https://cloud.githubusercontent.com/assets/1515742/21673828/83e96246-d333-11e6-8b05-561cbd757c4f.png",
+    "datePublished": "2017-01-01T16:22:00+02:00",
+    "description": "Working on the Vue.rocks blog, stay tuned!",
+    "url": "https://vue.rocks/2017/01/01/backdrop-(filter)-it-like-its-hot/"
+  }
+</script>
+<!-- End Jekyll SEO tag -->
+
+  <link type="text/css" rel="stylesheet" href="/assets/main.css">
+  <link rel="canonical" href="https://vue.rocks/2017/01/01/backdrop-(filter)-it-like-its-hot/">
+  <link rel="alternate" type="application/rss+xml" title="Vue.js rocks! Vue components, plugins, tutorials and more!" href="https://vue.rocks/feed.xml"/>
+
+  <!-- Fix https://github.com/fadeit/fadeitdk-blog/issues/19 to re-enable -->
+  <!--   
+    <link rel="amphtml" href="https://vue.rocks/amp/2017/01/01/backdrop-(filter)-it-like-its-hot">
+   -->
+
+  <!-- Fav Icon -->
+  <link href="https://vue.rocks/favicon/favicon.ico" rel="shortcut icon" type="image/x-icon">
+  <link rel="apple-touch-icon" sizes="57x57" href="https://vue.rocks/favicon/apple-touch-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="https://vue.rocks/favicon/apple-touch-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="https://vue.rocks/favicon/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="https://vue.rocks/favicon/apple-touch-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="https://vue.rocks/favicon/apple-touch-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="https://vue.rocks/favicon/apple-touch-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="https://vue.rocks/favicon/apple-touch-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="https://vue.rocks/favicon/apple-touch-icon-152x152.png">
+  <link rel="icon" type="image/png" href="https://vue.rocks/favicon/favicon-196x196.png" sizes="196x196">
+  <link rel="icon" type="image/png" href="https://vue.rocks/favicon/favicon-160x160.png" sizes="160x160">
+  <link rel="icon" type="image/png" href="https://vue.rocks/favicon/favicon-96x96.png" sizes="96x96">
+  <link rel="icon" type="image/png" href="https://vue.rocks/favicon/favicon-16x16.png" sizes="16x16">
+  <link rel="icon" type="image/png" href="https://vue.rocks/favicon/favicon-32x32.png" sizes="32x32">
+  <meta name="msapplication-TileColor" content="#2d89ef">
+  <meta name="msapplication-TileImage" content="https://vue.rocks/favicon/mstile-144x144.png">
+</head>
+
+
+  <body>
+
+    <header class="vr__header">
+  <section class="mdl-layout__header-row vr__header-row">
+    <a class="mdl-layout-title vr__header__logo" href="/">
+      <img src="/assets/vue.rocks-logo.png" alt="Vue.rocks logo"/>
+      <p>Vue.js rocks!</p>
+    </a>
+
+    <nav class="mdl-navigation">
+      <!--  <a class="mdl-navigation__link" href="/categories">Categories</a>
+      <a class="mdl-navigation__link" href="/authors">Authors</a> -->
+      <a class="mdl-navigation__link mdl-navigation__link--rss" href="/feed.xml">
+        <i class="material-icons">rss_feed</i>
+        RSS
+      </a>
+    </nav>
+  </section>
+</header>
+
+
+    <div class="page-content">
+      <div class="wrapper">
+        <main class="blog vr__post">
+  <article class="mdl-grid vr__post__inner">
+    <section class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
+      <header class="mdl-card__media mdl-color-text--grey-50">
+        <p>Working on the Vue.rocks blog, stay tuned!</p>
+        <h3>Vue rocks (almost) live!</h3>
+      </header>
+
+      <section class="mdl-color-text--grey-700 mdl-card__supporting-text meta">
+        <a href="/authors/dan" class="minilogo" style="background-image: url(https://s.gravatar.com/avatar/37131e747ce8855b4015024d64668e7d);"></a>
+
+        <div>
+          <a href="/authors/dan">
+            <strong class="author">Dan Mindru</strong>
+          </a>
+          <time datetime="2017-01-01T16:22:00+02:00" class="date">Jan 1, 2017</time>
+        </div>
+      </section>
+
+      <section class="mdl-color-text--grey-700 mdl-card__supporting-text vr__post__content">
+        <p>Vue.rocks is shaping up. Meanwhile, you can see the source at <a href="https://github.com/vue-rocks/blog">github.com/vue-rocks/blog</a>.</p>
+
+
+        <p class="vr__post__tags">
+          Tags:
+          <small>
+            
+              <a href="/tag/vue/">vue</a>
+            
+              <a href="/tag/vuejs/">vuejs</a>
+            
+              <a href="/tag/vue-js/">vue.js</a>
+            
+              <a href="/tag/javascript/">javascript</a>
+            
+          </small>
+        </p>
+      </section>
+
+      
+        <section class="mdl-color-text--primary-contrast mdl-card__supporting-text vr__post__comments">
+          <div id="disqus_thread" style="width:100%; height:auto;"></div>
+        </section>
+
+        <script>
+            var disqus_config = function () {
+              this.page.url = 'https://vue.rocks/2017/01/01/backdrop-(filter)-it-like-its-hot/';
+              this.page.identifier = '2017/01/01/backdrop-(filter)-it-like-its-hot/';
+            };
+            (function() {  // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+
+                s.src = '//fadeit.disqus.com/embed.js';
+
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+            })();
+        </script>
+
+        <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript" rel="nofollow">comments powered by Disqus.</a></noscript>
+      
+    </section>
+
+    <section class="mdl-card mdl-card--collapse mdl-card__supporting-text mdl-shadow--4dp vr__post__inner vr__post__recommended">
+      <!-- @todo more attractive recommendations -->
+      <footer class="mdl-card__media">
+        <nav class="pagination mdl-color-text--grey-50">
+
+          
+
+          <div class="section-spacer"></div>
+
+          
+        </nav>
+      </footer>
+    </section>
+
+  </article>
+</main>
+
+      </div>
+    </div>
+
+    <footer class="mdl-mega-footer vr__footer">
+  <div class="mdl-mega-footer__bottom-section">
+    <ul class="mdl-mega-footer__link-list">
+      <li class="mdl-logo">Vue.js rocks!</li>
+      <li><a href="http://twitter.com/vuerocks">Twitter</a></li>
+      <li><a href="https://github.com/vue-rocks">Github</a></li>
+      <li class="vr__footer__made"><a href="https://fadeit.dk">Made with &#x2661; by Dan Mindru</a></li>
+    </ul>
+  </div>
+</footer>
+
+    <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-29019414-14', 'auto');
+  ga('send', 'pageview');
+</script>
+
+
+    <script>
+      WebFontConfig = {
+        google: { families: [ 'Roboto:300,400,500,700', 'Material+Icons:400' ] }
+      };
+      (function() {
+        var wf = document.createElement('script');
+        wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+          '://ajax.googleapis.com/ajax/libs/webfont/1.5.18/webfont.js';
+        wf.type = 'text/javascript';
+        wf.async = 'true';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(wf, s);
+      })();
+    </script>
+
+  </body>
+</html>
