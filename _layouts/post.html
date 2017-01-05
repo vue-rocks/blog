@@ -1,8 +1,8 @@
 ---
 layout: default
 ---
-<main class="blog fdt__post">
-  <article class="mdl-grid fdt__post__inner">
+<main class="blog vr__post">
+  <article class="mdl-grid vr__post__inner">
     <section class="mdl-card mdl-shadow--4dp mdl-cell mdl-cell--12-col">
       <header class="mdl-card__media mdl-color-text--grey-50">
         <p>{{ page.description }}</p>
@@ -20,10 +20,10 @@ layout: default
         </div>
       </section>
 
-      <section class="mdl-color-text--grey-700 mdl-card__supporting-text fdt__post__content">
+      <section class="mdl-color-text--grey-700 mdl-card__supporting-text vr__post__content">
         {{ content }}
 
-        <p class="fdt__post__tags">
+        <p class="vr__post__tags">
           Tags:
           <small>
             {% for tag in page.tags %}
@@ -34,7 +34,7 @@ layout: default
       </section>
 
       {% if page.comments %}
-        <section class="mdl-color-text--primary-contrast mdl-card__supporting-text fdt__post__comments">
+        <section class="mdl-color-text--primary-contrast mdl-card__supporting-text vr__post__comments">
           <div id="disqus_thread" style="width:100%; height:auto;"></div>
         </section>
 
@@ -57,7 +57,7 @@ layout: default
       {% endif %}
     </section>
 
-    <section class="mdl-card mdl-card--collapse mdl-card__supporting-text mdl-shadow--4dp fdt__post__inner fdt__post__recommended">
+    <section class="mdl-card mdl-card--collapse mdl-card__supporting-text mdl-shadow--4dp vr__post__inner vr__post__recommended">
       <!-- @todo more attractive recommendations -->
       <footer class="mdl-card__media">
         <nav class="pagination mdl-color-text--grey-50">

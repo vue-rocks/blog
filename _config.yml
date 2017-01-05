@@ -7,15 +7,15 @@ encoding: utf-8
 # 'jekyll serve'. If you change this file, please restart the server process.
 
 # Site settings
-title: fadeit /blog - development and design articles
+title: Vue.js rocks! Vue components, plugins, tutorials and more!
 email: info@fadeit.dk
 description: > # this means to ignore newlines until "baseurl:"
-  Our blog is a great place to find front-end / back-end articles & tutorials, as well as design related content.
-baseurl: "/blog" # the subpath of your site, e.g. /blog
-url: "https://fadeit.dk" # the base hostname & protocol for your site
-twitter_username: fadeitdk
-github_username:  fadeit
-google_analytics_code: UA-47022100-1
+  The Vue.js rocks blog is a great place to learn new things about Vue.js components, plugins, build tools and everything in between.
+baseurl: "" # the subpath of your site, e.g. /blog
+url: "https://vue.rocks" # the base hostname & protocol for your site
+twitter_username: vuerocks
+github_username:  vuerocks
+google_analytics_code: UA-29019414-14
 permalink: pretty
 markdown: kramdown
 highlighter: rouge
@@ -40,7 +40,6 @@ gems:
 
 exclude:
   - node_modules
-  - package.json
   - package.json
   - README.md
   - Gemfile
@@ -77,7 +76,7 @@ defaults:
       sizeDesktop: 12
       textColor: "grey-50"
       metaColor: "grey-600"
-      image: "https://fadeit.dk/src/assets/img/brand/fadeit_logo_square.png"
+      image: "https://cloud.githubusercontent.com/assets/1515742/21673828/83e96246-d333-11e6-8b05-561cbd757c4f.png"
 
 
 authors:
@@ -89,25 +88,3 @@ authors:
     web: "http://mindrudan.com/"
     twitter: "d4m1n"
     github: "danmindru"
-  justas:
-    display_name: "Justas Azna"
-    title: "Software engineer"
-    gravatar: "bd053e828d54ede4d3c8686cd6e414bc"
-    email: "ja@fadeit.dk"
-    web: "http://reederz.com/"
-    twitter: "reederz"
-    github: "reederz"
-  sander:
-    display_name: "Sander Sink"
-    title: "Software engineer"
-    gravatar: "3b506312d288ba78253aef2222fcfb78" # Actually Justas' gravatar
-    email: "ss@fadeit.dk"
-    github: "ozooner"
-  fadeit:
-    display_name: "fadeit"
-    title: "Software development company"
-    gravatar: "3b506312d288ba78253aef2222fcfb78"
-    email: "info@fadeit.dk"
-    web: "http://fadeit.dk/"
-    twitter: "fadeitdk"
-    github: "fadeit"

@@ -1,8 +1,8 @@
 ---
 layout: default
 ---
-<main class="blog fdt__post fdt__tag-feed">
-  <article class="fdt__post__inner">
+<main class="blog vr__post vr__tag-feed">
+  <article class="vr__post__inner">
     <h3>Posts tagged with <b>{{ page.tag }}</b></h3>
 
     <ul class="mdl-list">
@@ -17,7 +17,7 @@ layout: default
             </span>
           </a>
 
-          <span class="fdt__tag-feed__tags">
+          <span class="vr__tag-feed__tags">
             <small>
               {% for tag in post.tags %}
                 <a href="{{ site.baseurl }}/tag/{{tag | slugify}}/">{{tag}}</a>

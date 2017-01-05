@@ -22,12 +22,12 @@ $ease: ease-in-out;
 $time: 300ms;
 
 //MDL Colors
-$fdt: #0fade1;
-$fdt-dark: darken($fdt, 10%);
+$vr: #1AB885;
+$vr-dark: darken($vr, 10%);
 
-$color-primary: $fdt;
-$color-primary-dark: red($fdt-dark), green($fdt-dark), blue($fdt-dark);
-$color-accent: red($fdt), green($fdt), blue($fdt);
+$color-primary: $vr;
+$color-primary-dark: red($vr-dark), green($vr-dark), blue($vr-dark);
+$color-accent: red($vr), green($vr), blue($vr);
 $color-primary-contrast: red($g2), green($g2), blue($g2);
 $color-accent-contrast: red($w), green($w), blue($w);
 

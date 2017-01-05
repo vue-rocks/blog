@@ -223,7 +223,7 @@ body{
 /*
  * 3. Fadeit styles
  */
-.fdt{
+.vr{
   &__return{
     position: fixed;
     left: 0;
@@ -245,6 +245,24 @@ body{
     width: 100%;
     margin: 0 auto;
     padding: $gs 0;
+
+    img {
+      width: 50px;
+      height: 50px;
+    }
+
+    &__logo {
+      display: flex;
+      align-items: center;
+      text-decoration: none;
+      color: $vr-dark;
+
+      p {
+        font-size: 1.3em;
+        font-weight: 300;
+        margin: 0 0 0 $gs;
+      }
+    }
   }
 
   &__header-row{
@@ -304,7 +322,7 @@ body{
           width: 100%;
         }
 
-        .fdt__footer__made{
+        .vr__footer__made{
           margin-left: 0;
           width: 100%;
         }
@@ -533,7 +551,7 @@ body{
       padding: 0;
     }
 
-    .fdt__post__inner{
+    .vr__post__inner{
       padding: 0 $gs/2;
     }
 
@@ -574,7 +592,7 @@ body{
   }
 
   &__content{
-    .fdt__post{
+    .vr__post{
       &:first-child{
         padding-top: 0;
       }
@@ -632,7 +650,7 @@ div.highlighter-rouge{
 /*
  * 5. Markdown extras
  */
-.fdt-table{
+.vr-table{
   text-align: left;
 
   .title{

@@ -1,6 +1,5 @@
 # Vue.rocks blog
-
-##⏳ Coming soon
+### [vue.rocks](http://vue.rocks)
 
 ----------------------------------
 
@@ -34,6 +33,5 @@ See defaults in _config.yml._
 
 ===================
 <br/>
-Made with ♥ <br/>
 Check out the blog at [vue.rocks](https://vue.rocks)
 
