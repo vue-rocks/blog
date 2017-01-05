@@ -14,7 +14,7 @@ description: > # this means to ignore newlines until "baseurl:"
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://vue.rocks" # the base hostname & protocol for your site
 twitter_username: vuerocks
-github_username:  vuerocks
+github_username:  vue-rocks
 google_analytics_code: UA-29019414-14
 permalink: pretty
 markdown: kramdown
